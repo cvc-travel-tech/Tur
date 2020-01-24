@@ -95,4 +95,13 @@ class FrontendController extends Controller
         return view('Complete');
     }
     
+
+    public function Booking()
+    {
+        return view('Booking');
+    }
+
+
+
+    
 }
