@@ -43,9 +43,9 @@ class FrontendController extends Controller
     }
 
 
-    public function family_package()
+    public function destinations()
     {
-        return view('family-package');
+        return view('destinations');
 
     }  
     
