@@ -17,7 +17,7 @@ Route::get('/blog', 'FrontendController@blog');
 
 
 //Route::get('/travel-free', 'FrontendController@travel_free');
-Route::get('/family-package', 'FrontendController@family_package');
+Route::get('/destinations', 'FrontendController@destinations');
 Route::get('/contact', 'FrontendController@contact');
 
 Route::get('/logiin', 'FrontendController@logiin');
