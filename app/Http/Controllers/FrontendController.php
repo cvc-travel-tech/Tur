@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Destination;
 use Illuminate\Http\Request;
 use App\Repositories\BlogRepository;
 use App\Repositories\PackageRepository;
@@ -27,6 +28,7 @@ class FrontendController extends Controller
     public function index()
     {
         $features = setting('site', 'features');
+        $destinations = Destination::;
         // dd();
         $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
         return view('index', compact('features', 'titles'));
