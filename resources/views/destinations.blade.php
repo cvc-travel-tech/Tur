@@ -174,8 +174,6 @@
 
 @include('Frontend.nav')
 
-
-
        
         <div class="page-template-content">
             <div class="container">
@@ -500,6 +498,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
