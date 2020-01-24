@@ -88,4 +88,11 @@ class FrontendController extends Controller
     {
         return view('Pack');
     }
+
+
+    public function Complete()
+    {
+        return view('Complete');
+    }
+    
 }

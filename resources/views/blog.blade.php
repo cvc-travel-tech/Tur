@@ -259,6 +259,8 @@ a.bravo-logo img{
 
 
     <div class="post_item ">
+
+
         <div class="header">
                         <div class="post-inner">
                 <h4 class="post-title">
@@ -280,6 +282,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
                 <a class="btn-readmore" href="blog-details.html">Read More</a>
             </div>
         </div>
+
+        
     </div>
     
 
