@@ -32,3 +32,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/Package/{slug}', 'FrontendController@Packages_details');
 
 Route::get('/blog_details', 'FrontendController@blog_details');
+
+Route::get('/Pack', 'FrontendController@Pack');
+
