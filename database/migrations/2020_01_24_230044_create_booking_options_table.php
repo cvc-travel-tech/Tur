@@ -15,6 +15,11 @@ class CreateBookingOptionsTable extends Migration
     {
         Schema::create('booking_options', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('booking_id');
+            $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
+            $table->unsignedBigInteger('package_option_id');
+            $table->integer('no_of_pax')->nullable();
+            $table->double('price',8,2)->nullable();
             $table->timestamps();
         });
     }
