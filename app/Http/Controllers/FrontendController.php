@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\BlogRepository;
 use App\Repositories\PackageRepository;
+use App\Images;
+use App\PackagePrice;
 
 class FrontendController extends Controller
 {
@@ -94,7 +96,21 @@ class FrontendController extends Controller
     
     public function pack()
     {
-        return view('Pack');
+        $packages = $this->Package->getQuery();
+
+        foreach($packages as $key => $package){
+             $package['package_images'] = Images::whereIn('id',$package->images)->get(); 
+
+            if(PackagePrice::where('package_id',$package->id)->count() > 0){
+
+                $package['three_p_price'] = PackagePrice::
+                where('package_id',$package->id)
+                ->orderBy('id','desc')->first()->{'3_person'} ?? '';
+            }
+        }
+       
+
+        return view('Pack',compact('packages'));
     }
 
 

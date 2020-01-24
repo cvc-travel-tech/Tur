@@ -294,8 +294,8 @@
                                                     <div class="g-price">
                                                         <div class="price">
                                                             <span class="onsale"></span>
-                                                            <span class="text-price">$
-                                                                {{$package->three_p_price}}
+                                                            <span class="text-price">
+                                                                ${{$package->three_p_price}}
                                                             </span>
                                                         </div>
                                                     </div>
