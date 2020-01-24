@@ -270,226 +270,42 @@
                             </div>
                             <div class="list-item">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <img src="images/kob.jpg">
-                                                <a target="_blank" href="http://cvc.vacations/tour/11-day-egypt-complete-tour">
-                                                </a>
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-                                                <a target="_blank" href="11 Day Turkey Complete.html">
-                                                    <h4>
-                                                        11 Day Turkey Complete
-                                                    </h4>
-                                                </a>
-
-
-                                            </div>
-
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
+                                    @foreach($packages as $package)
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="item-tour ">
+                                                <div class="thumb-image ">
+                                                    <img src="{{asset('storage/tmp/uploads/large').'/'.$package->package_images[0]->file_path}}">
+                                                    <a target="_blank" href="http://cvc.vacations/tour/11-day-egypt-complete-tour">
+                                                    </a>
                                                 </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
+                                                <div class="location">
+                                                </div>
+                                                <div class="item-title">
+                                                    <a target="_blank" href="11 Day Turkey Complete.html">
+                                                        <h4>
+                                                            {{$package->name}}
+                                                        </h4>
+                                                    </a>
+
+
+                                                </div>
+
+                                                <div class="info">
+                                                    <div class="g-price">
+                                                        <div class="price">
+                                                            <span class="onsale"></span>
+                                                            <span class="text-price">$
+                                                                {{$package->three_p_price}}
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <img src="images/Istanbul-Turkey-UVET (1).jpg">
-                                                <a target="_blank" href="http://cvc.vacations/tour/7-day-standard-egypt-tour">
-                                                </a>
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-                                                <a target="_blank" href="7 Day Standard Tureky.html">
-                                                    <h4 style="font-size: 20px;">
-                                                        7 Day Standard Turkey
-                                                    </h4>
-                                                </a>
-
-
-                                            </div>
-
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
-                                                </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <a target="_blank" href="#">
-                                                    <img src="images/Galata-Tower-neighberhood-view-Istanbul-Turkey-shutterstock_554343394.jpg">
-                                                </a>
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-                                                <a target="_blank" href="14 Day turkey Grand Tour.html">
-                                                    <h4 style="font-size: 20px;">
-                                                        14 Day Turkey Grand Tour
-                                                    </h4>
-                                                </a>
-
-
-                                            </div>
-
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
-                                                </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html">
-                                                    <img src="images/istanbul-cityscape-skyline-istanbul-city-turkey_105939-117.jpg">
-                                                </a>
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-                                                <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html"></a>
-                                                <h4 style="font-size: 20px;">
-                                                    9 Day Standard Turkey Tour
-                                                </h4>
-                                                </a>
-
-
-                                            </div>
-
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
-                                                </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html">
-                                                    <img src="images/Istanbul-Tramonto-sul-Bosforo.png">
-                                                </a>
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-
-                                                <h4 style="font-size: 20px;">
-                                                    <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html">
-                                                    9 Day Standard  Turkey Tour
-                                                </h4>
-                                                </a>
-
-
-                                            </div>
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
-                                                </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="item-tour ">
-                                            <div class="thumb-image ">
-                                                <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html">
-                                                    <img src="images/Hagia-Sophia.png">
-                                                </a>
-
-                                            </div>
-                                            <div class="location">
-                                            </div>
-                                            <div class="item-title">
-                                                <a target="_blank" href="9 Day Standard with Red Sea Turkey Tour.html">
-                                                    <h4 style="font-size: 20px;">
-                                                        9 Day Standard Tureky
-                                                    </h4>
-                                                </a>
-
-
-                                            </div>
-
-                                            <div class="info">
-                                                <div class="duration">
-                                                    <i class="icofont-wall-clock"></i> Day
-                                                </div>
-                                                <div class="g-price">
-                                                    <div class="prefix">
-                                                        <i class="icofont-flash"></i>
-                                                        <span class="fr_text">from</span>
-                                                    </div>
-                                                    <div class="price">
-                                                        <span class="onsale"></span>
-                                                        <span class="text-price">$0</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+                                    @endforeach
                                 </div>
+
+
                             </div>
                             <div class="bravo-pagination">
 
