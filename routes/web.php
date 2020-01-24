@@ -29,7 +29,7 @@ Route::get('example', ['example' => 'exampl@index', 'as' => 'exampl.index']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/Package/{slug}', 'FrontendController@Packages_details');
+Route::get('/Package/{slug}', 'FrontendController@Packages_details')->name('front.package_details');
 
 Route::get('/blog_details', 'FrontendController@blog_details');
 

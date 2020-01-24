@@ -304,7 +304,7 @@
                         <div class="col-md-12 col-lg-9">
                             <div class="g-header">
                                 <div class="left">
-                                    <h2>11 Day turkey Complete</h2>
+                                    <h2>{{$package->name}}</h2>
                                 </div>
 
 
@@ -345,9 +345,11 @@
                             </div> -->
                             <div class="g-gallery">
                                 <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
-                                    <a href="images/The-View-of-Istanbul-5.jpg"><img src="{{ asset('frontend/images/The-View-of-Istanbul-5.jpg') }}"></a>
-                                    <a href="http://cvc.vacations/uploads/demo/location/location-3.jpg"><img src="http://cvc.vacations/uploads/demo/location/location-3.jpg"></a>
-                                    <a href="images/Istanbul-5.jpg"><img src="images/Istanbul-5.jpg"></a>
+                                    @foreach($package['package_images'] as $key => $value)
+                                    <a href="">
+                                        <img src="{{asset('storage/tmp/uploads/large').'/'.$value->file_path}}">
+                                    </a>
+                                  @endforeach
                                 </div>
                             </div>
 
@@ -375,164 +377,14 @@
                                                 </head>
 
                                                 <body>
-                                                    <p class="MsoListParagraphCxSpFirst" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;"><span style="text-indent: -18pt;"></span></p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;"><span style="text-indent: -18pt;"></span></p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;"><span style="text-indent: -18pt;"></span></p>
-                                                    <p class="MsoListParagraphCxSpLast" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 39.4pt;">&nbsp;</p>
+                                                  {!! $package->overview !!}
                                                 </body>
 
                                                 </html>
                                             </div>
                                             <div class="tab-pane fade" id="nav-Itinerary" role="tabpanel" aria-labelledby="nav-Itinerary-tab">
+                                                    {!! $package->itinerary !!}
 
-                                                <div class="g-faq">
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="header">
-                                                            <i class="field-icon icofont-support-itinerary"></i>
-
-                                                            <span class="arrow"><i class="fa fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="body">
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                             <div class="tab-pane fade" id="nav-tour_map" role="tabpanel" aria-labelledby="nav-tour_map-tab">
                                                 <!DOCTYPE html>
@@ -542,7 +394,8 @@
                                                 </head>
 
                                                 <body>
-                                                    <p><img src="../../../../uploads/0000/1/2019/12/11/map-02-600.png" alt="" width="600" height="400" /></p>
+                                                 <!--    <p><img src="../../../../uploads/0000/1/2019/12/11/map-02-600.png" alt="" width="600" height="400" /></p> -->
+                                                 <p>{!! $package->trip_map !!}</p>
                                                 </body>
 
                                                 </html>
@@ -556,31 +409,7 @@
                                                 </head>
 
                                                 <body>
-                                                    <p>&nbsp;</p>
-                                                    <p class="MsoListParagraphCxSpFirst" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->
-                                                    </p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l0 level1 lfo1; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->:</p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">&nbsp;</p>
-                                                    <p class="MsoListParagraphCxSpMiddle" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l1 level1 lfo2; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->(<span style="color: red;"></span> <span style="color: red;"></span>)</p>
-                                                    <p class="MsoListParagraphCxSpLast" style="mso-add-space: auto; text-align: left; text-indent: -18.0pt; mso-list: l1 level1 lfo2; direction: ltr; unicode-bidi: embed; margin: 0cm 0cm 10.0pt 36.0pt;">
-                                                        <!-- [if !supportLists]-->(<span style="color: red;"></span></p>
-                                                    <p>&nbsp;</p>
-                                                    <p>&nbsp;</p>
+
                                                 </body>
 
                                                 </html>
@@ -640,11 +469,11 @@
                                         <div class="form-head">
                                             <div class="price">
                                                 <span class="label">
-                        from
-                    </span>
+                                                    from
+                                                </span>
                                                 <span class="value">
-                        <span class="onsale"></span>
-                                                <span class="text-lg">$0</span>
+                                                    <span class="onsale"></span>
+                                                    <span class="text-lg">$0</span>
                                                 </span>
                                             </div>
                                         </div>

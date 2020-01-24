@@ -275,13 +275,13 @@
                                             <div class="item-tour ">
                                                 <div class="thumb-image ">
                                                     <img src="{{asset('storage/tmp/uploads/large').'/'.$package->package_images[0]->file_path}}">
-                                                    <a target="_blank" href="http://cvc.vacations/tour/11-day-egypt-complete-tour">
+                                                    <a target="_blank" href="{{route('front.package_details',$package)}}">
                                                     </a>
                                                 </div>
                                                 <div class="location">
                                                 </div>
                                                 <div class="item-title">
-                                                    <a target="_blank" href="11 Day Turkey Complete.html">
+                                                    <a target="_blank" href="{{route('front.package_details',$package)}}">
                                                         <h4>
                                                             {{$package->name}}
                                                         </h4>

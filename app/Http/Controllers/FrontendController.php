@@ -75,9 +75,17 @@ class FrontendController extends Controller
     
     public function Packages_details($slug)
     {
-        $row = $this->Package->findOrFail($slug);
+
+        $package = $this->Package->findOrFail($slug);
+
+        $package['package_images'] = Images::whereIn('id',$package->images)->get(); 
+
+        if(PackagePrice::where('package_id',$package->id)->count() > 0){
+            $package['prices'] = PackagePrice::where('package_id',$package->id)->get();
+        }
+
         
-        return view('Packages_details', compact( 'row'));
+        return view('Complete', compact( 'package'));
     } 
     
 
@@ -110,6 +118,7 @@ class FrontendController extends Controller
 
     public function Complete()
     {
+
         return view('Complete');
     }
     
