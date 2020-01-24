@@ -82,5 +82,10 @@ class FrontendController extends Controller
     {
         return view('blog-details');
     }
+ 
     
+    public function pack()
+    {
+        return view('Pack');
+    }
 }
