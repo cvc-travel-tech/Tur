@@ -106,4 +106,20 @@ class FrontendController extends Controller
 
         return view('Pack',compact('packages'));
     }
+
+
+    public function Complete()
+    {
+        return view('Complete');
+    }
+    
+
+    public function Booking()
+    {
+        return view('Booking');
+    }
+
+
+
+    
 }
