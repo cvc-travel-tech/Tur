@@ -8,6 +8,7 @@ use App\Repositories\PackageRepository;
 use App\Repositories\DestinationRepository;
 use App\Http\Requests\PackageRequest;
 use Illuminate\Http\Request;
+use App\PackagePrice;
 
 class PackageController extends Controller
 {
@@ -77,6 +78,22 @@ class PackageController extends Controller
         //
         // dd($request->all());
         $data = $this->repo->create($request->all());
+        foreach(request('daly') as $key => $value){
+      
+    $start_date = (\DateTime::createFromFormat('m/d/Y', rtrim(explode('-',$value['datepicker'])[0])))->format('Y-m-d');
+    $end_date = (\DateTime::createFromFormat('m/d/Y', ltrim(explode('-',$value['datepicker'])[1])))->format('Y-m-d');
+
+          PackagePrice::create([
+                'package_id' => $data->id,
+                'date' => $start_date,
+                'end_date' => $end_date,    
+                'solo' => $value['solo'],
+                'p_p' => $value['p-p'],
+                '3_person' => $value['3person'],
+                'sgl' => $value['sgl']
+            ]);
+        }
+      
         return redirect()->route('admin.package.index')->with('successMsg', 'Property is updated .');
     }
 
@@ -244,6 +261,7 @@ class PackageController extends Controller
         //
         $data = $this->repo->find($id);
         $data = $this->repo->update($data, $this->request->all());
+        
         return redirect()->route('admin.package.index')->with('successMsg', 'Property is updated .');
     }
 

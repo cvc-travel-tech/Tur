@@ -70,6 +70,11 @@ class Package extends Model
         $meta['service_title'] = $this->name;
         return $meta;
     }
+
+     public function package_prices()
+    {
+        return $this->hasMany('App\PackagePrice', 'package_id');
+    }
     
     // public function Destinations()
     // {
