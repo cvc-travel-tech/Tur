@@ -9,6 +9,7 @@ use App\Repositories\DestinationRepository;
 use App\Http\Requests\PackageRequest;
 use Illuminate\Http\Request;
 use App\PackagePrice;
+use App\PackageOption;
 
 class PackageController extends Controller
 {
@@ -78,6 +79,16 @@ class PackageController extends Controller
         //
         // dd($request->all());
         $data = $this->repo->create($request->all());
+
+        foreach(request('options') as $key => $value){
+             PackageOption::create([
+                'package_id' => $data->id,
+                'name' => $value['Name'],
+                'price' => $value['price'],    
+            ]);
+
+        }
+
         foreach(request('daly') as $key => $value){
       
     $start_date = (\DateTime::createFromFormat('m/d/Y', rtrim(explode('-',$value['datepicker'])[0])))->format('Y-m-d');

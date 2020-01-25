@@ -6,6 +6,7 @@ use App\Repositories\BlogRepository;
 use App\Repositories\PackageRepository;
 use App\Images;
 use App\PackagePrice;
+use App\Package;
 
 class FrontendController extends Controller
 {
@@ -97,7 +98,6 @@ class FrontendController extends Controller
     public function pack()
     {
         $packages = $this->Package->getQuery();
-
         foreach($packages as $key => $package){
              $package['package_images'] = Images::whereIn('id',$package->images)->get(); 
 
@@ -106,11 +106,12 @@ class FrontendController extends Controller
                 $package['three_p_price'] = PackagePrice::
                 where('package_id',$package->id)
                 ->orderBy('id','desc')->first()->{'3_person'} ?? '';
-            }
-        }
-       
 
-        return view('Pack',compact('packages'));
+            }
+
+        }
+
+       return view('Pack',compact('packages'));
     }
 
 
@@ -121,9 +122,11 @@ class FrontendController extends Controller
     }
     
 
-    public function Booking()
+    public function Booking($id)
     {
-        return view('Booking');
+        $package = Package::where('id',$id)->with('package_options','package_prices')->first();
+
+        return view('Booking',compact('package'));
     }
 
 
