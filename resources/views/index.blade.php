@@ -229,91 +229,26 @@
             <div class="bravo-featured-item">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/check-mark.png" width="80px" height="80px" class="img-responsive">
+                        @foreach($setting['site[features]'] as $value)
+                            <div class="col-md-4">
+                                <div class="featured-item">
+                                    <div class="image">
+                                        <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($value['icon'])->file_path) }}" width="80px" height="80px"
+                                             class="img-responsive">
 
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        FREE CANCELLATION
-                                    </h4>
-                                    <div class="desc">Free cancellation on most tours, just in case things don&#039;t go
-                                        as planned.
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title">
+                                            {{ $value['tital'] }}
+                                        </h4>
+                                        <div class="desc">Free cancellation on most tours, just in case things don&#039;t
+                                            go
+                                            as planned.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/price-tag-icon-png-5.png" width="80px" height="80px"
-                                         class="img-responsive">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        BEST PRICE GUARANTEE
-                                    </h4>
-                                    <div class="desc">We price match within 72 hours of order confirmation.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/256-256-5b6faa0e271b8fbbf0985454aceb3bd6-receptionist.png"
-                                         width="80px" height="80px" class="img-responsive">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        Tour Guide System
-                                    </h4>
-                                    <div class="desc">We&#039;re always here to guide you in your trip.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/wifi.png" width="80px" height="80px" class="img-responsive">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        WIFI 24/7
-                                    </h4>
-                                    <div class="desc">We provide free wifi sim card</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/download.png" width="80px" height="80px" class="img-responsive">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        Guaranteed Departure
-                                    </h4>
-                                    <div class="desc">Up 2 PAX we grantee to depart any date</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="featured-item">
-                                <div class="image">
-                                    <img src="images/09-512.png" width="80px" height="80px" class="img-responsive">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">
-                                        Client Service
-                                    </h4>
-                                    <div class="desc">We&#039;re always here to help, before, during, and after your
-                                        trip
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -359,7 +294,10 @@
                                                     </div>
                                                     <div class="content">
                                                         <h4 class="title">{{ $value->name }}</h4>
-                                                        <div class="desc" style="background: #ec991f;">{{ $value->hotels_count }} Hotels</div>
+                                                        <div class="desc"
+                                                             style="background: #ec991f;">{{ $value->hotels_count }}
+                                                            Hotels
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
@@ -529,159 +467,47 @@
                     </div>
                     <div class="list-item">
                         <div class="owl-carousel">
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
 
-                                    <img src="images/14099845.jpg">
-                                    </a>
-                                </div>
-                                <div class="location">
-                                    <i class="icofont-paper-plane"></i>
-                                </div>
-                                <div class="item-title">
-                                    <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
-                                    kempinski-istanbul
-                                    </a>
-                                </div>
-                                <div class="service-review tour-review">
-                                    <div class="list-star">
-                                        <ul class="booking-item-rating-stars">
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="booking-item-rating-stars-active" style="">
+                            @foreach($hotels as $value)
+                                <div class="item-tour ">
+                                    <div class="thumb-image ">
+                                        <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
+
+                                        <img src="images/14099845.jpg">
+                                        {{--</a>--}}
+                                    </div>
+                                    <div class="location">
+                                        <i class="icofont-paper-plane"></i>
+                                    </div>
+                                    <div class="item-title">
+                                        <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
+                                        {{ $value->name }}
+                                        {{--</a>--}}
+                                    </div>
+                                    <div class="service-review tour-review">
+                                        <div class="list-star">
                                             <ul class="booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
                                             </ul>
+                                            <div class="booking-item-rating-stars-active" style="">
+                                                <ul class="booking-item-rating-stars">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
                                         </div>
+
                                     </div>
 
                                 </div>
-
-                            </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <!-- <a href="http://cvc.vacations/hotel/four-season-first-residence"> -->
-
-                                    <img src="images/image.webp">
-                                    </a>
-                                </div>
-                                <div class="location">
-                                    <i class="icofont-paper-plane"></i>
-                                </div>
-                                <div class="item-title">
-                                    <!-- <a href="http://cvc.vacations/hotel/four-season-first-residence"> -->
-                                    Four Season istanbul
-                                    </a>
-                                </div>
-                                <div class="service-review tour-review">
-                                    <div class="list-star">
-                                        <ul class="booking-item-rating-stars">
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="booking-item-rating-stars-active" style="">
-                                            <ul class="booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <!-- <a href="http://cvc.vacations/hotel/sofitel-winter-palace-luxor"> -->
-                                    <img src="images/0.jpg" style="height: 200px;">
-
-                                    </a>
-                                </div>
-                                <div class="location">
-                                    <i class="icofont-paper-plane"></i>
-                                </div>
-                                <div class="item-title">
-                                    <!-- <a href="http://cvc.vacations/hotel/sofitel-winter-palace-luxor"> -->
-                                    sofitel taksim hotel istanbul
-                                    </a>
-                                </div>
-                                <div class="service-review tour-review">
-                                    <div class="list-star">
-                                        <ul class="booking-item-rating-stars">
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="booking-item-rating-stars-active" style="">
-                                            <ul class="booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <!-- <a href="http://cvc.vacations/hotel/sofitel-winter-palace-luxor"> -->
-                                    <img src="images/Sofitel_taksim-696x526.jpg">
-
-                                    </a>
-                                </div>
-                                <div class="location">
-                                    <i class="icofont-paper-plane"></i>
-                                </div>
-                                <div class="item-title">
-                                    <!-- <a href="http://cvc.vacations/hotel/sofitel-winter-palace-luxor"> -->
-                                    sofitel taksim hotel istanbul
-                                    </a>
-                                </div>
-                                <div class="service-review tour-review">
-                                    <div class="list-star">
-                                        <ul class="booking-item-rating-stars">
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                            <li><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="booking-item-rating-stars-active" style="">
-                                            <ul class="booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>

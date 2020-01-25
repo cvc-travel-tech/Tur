@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Destination;
+use App\Hotel;
 use Illuminate\Http\Request;
 use App\Repositories\BlogRepository;
 use App\Repositories\PackageRepository;
@@ -30,10 +31,12 @@ class FrontendController extends Controller
         $features = setting('site', 'features');
 
         $destinations = Destination::latest()->limit(5)->withCount('Hotels')->with('tmpImg','Img')->get();
-//        return $destinations;
+
+        $hotels = Hotel::latest()->limit(8)->get();
+
         $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
 
-        return view('index', compact('features', 'titles','destinations'));
+        return view('index', compact('features', 'titles','destinations','hotels'));
     }
 
 

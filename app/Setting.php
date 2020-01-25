@@ -13,4 +13,5 @@ class Setting extends Model
     protected $casts = [
         'val' => 'array', // Will convarted to (Array)
     ];
+
 }
