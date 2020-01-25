@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
 
 
-    <title>Home Page - Tareek Al-Ofuk</title>
+    <title>{{ $setting['site[name]'] }}</title>
     <meta name="description" content="" />
 
 

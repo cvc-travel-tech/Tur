@@ -41,10 +41,13 @@ class SettingController extends Controller
     {
 
         $rows = $this->repo->getQuery();
+
         $inputVal = [];
         foreach ($rows as $row) {
             $inputVal[$row->group . '[' . $row->name . ']'] = $row->val;
         }
+
+//        dd($inputVal);
         $form = [
             'site' => [
                 'site[name]' => [

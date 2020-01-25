@@ -19,6 +19,10 @@ use Illuminate\Http\Request;
 
 
 
-Route::group(['prefix' => 'backend', 'as' => 'admin.'], function () {
-    Route::apiResource('destination', 'DestinationController');
+Route::group(['namespace' => 'Api'], function () {
+//    Route::apiResource('destination', 'DestinationController');
+    Route::get('blogs','BlogController@index');
+
 });
+
+
