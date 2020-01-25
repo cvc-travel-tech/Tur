@@ -26,11 +26,14 @@ class FrontendController extends Controller
 
     public function index()
     {
+
         $features = setting('site', 'features');
-        $destinations = Destination::;
-        // dd();
+
+        $destinations = Destination::latest()->limit(5)->withCount('Hotels')->with('tmpImg','Img')->get();
+//        return $destinations;
         $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
-        return view('index', compact('features', 'titles'));
+
+        return view('index', compact('features', 'titles','destinations'));
     }
 
 
@@ -49,8 +52,9 @@ class FrontendController extends Controller
 
     public function destinations()
     {
-        return view('destinations');
+        $destinations = Destination::latest()->withCount('Hotels')->with('tmpImg','Img')->get();
 
+        return view('destinations',compact('destinations'));
     }  
     
     
