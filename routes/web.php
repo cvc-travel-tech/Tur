@@ -36,4 +36,4 @@ Route::get('/blog_details', 'FrontendController@blog_details');
 Route::get('/Pack', 'FrontendController@Pack');
 
 Route::get('/Complete', 'FrontendController@Complete');
-Route::get('/Booking', 'FrontendController@Booking');
+Route::get('/Booking/{id}', 'FrontendController@Booking');

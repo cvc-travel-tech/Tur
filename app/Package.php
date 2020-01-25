@@ -71,10 +71,16 @@ class Package extends Model
         return $meta;
     }
 
-     public function package_prices()
+    public function package_prices()
     {
         return $this->hasMany('App\PackagePrice', 'package_id');
     }
+
+       public function package_options()
+    {
+        return $this->hasMany('App\PackageOption', 'package_id');
+    }
+
     
     // public function Destinations()
     // {

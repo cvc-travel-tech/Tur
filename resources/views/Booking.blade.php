@@ -269,8 +269,7 @@
         </style>
 
 @include('Frontend.nav')
-
-
+    
 
         <div class="bravo-booking-page padding-content">
             <div class="container">
@@ -349,59 +348,33 @@
                                                             <td>Total per PAX
                                                             </td>
                                                         </tr>
+                                                        @foreach($package->package_options()->get() as $value)
                                                         <tr>
 
                                                             <td>
 
 
                                                                 <input type="checkbox" class="form-check-input" id="chkPasspo" style="margin-top:1px">
-                                                                <a href="#" style="margin-left:25px"> Istanbul</a>
+                                                                <a href="#" style="margin-left:25px"> {{$value->name}}</a>
 
                                                             </td>
-                                                            <td>$2000</td>
+                                                            <td>${{$value->price}}</td>
                                                             <td>
                                                                 <div class="input-field ">
                                                                     <select class="browser-default  form-control rooms-select" name="noofchildrens">
-                                    <option value="" disabled selected>No of PAX</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
+                                                                    <option value="" disabled selected>No of PAX</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                </select>
                                                                 </div>
                                                             </td>
 
                                                         </tr>
-                                                        <tr>
-                                                            <td>
-
-
-                                                                <input type="checkbox" class="form-check-input" id="chkPasspo" style="margin-top:1px">
-                                                                <a href="#" style="margin-left:25px"> Istanbul</a>
-
-                                                            </td>
-                                                            <td>$2000</td>
-                                                            <td>
-                                                                <div class="input-field ">
-                                                                    <select class="browser-default  form-control rooms-select" name="noofchildrens">
-                                    <option value="" disabled selected>No of PAX</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-
-
-
-
+                                                       @endforeach
 
                                                     </tbody>
                                                 </table>
@@ -785,7 +758,7 @@
                                         <div class="review-section">
                                             <div class="service-info">
                                                 <div>
-                                                    <h3 class="service-name"><a href="#">14 Day Istanbul Grand Tour</a></h3>
+                                                    <h3 class="service-name"><a href="#">{{$package->name}}</a></h3>
                                                 </div>
 
                                             </div>
@@ -795,21 +768,21 @@
                                                 <li>
                                                     <div class="label">Start date:</div>
                                                     <div class="val">
-                                                        01/31/2020
+                                                        &nbsp;{{$package->package_prices()->first()->date}}
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="label">Duration:</div>
                                                     <div class="val">
-                                                        1 hours
+                                                        {{$package->duration}}
                                                     </div>
                                                 </li>
-                                                <li>
+                                              <!--   <li>
                                                     <div class="label">Guests:</div>
                                                     <div class="val">
                                                         1
                                                     </div>
-                                                </li>
+                                                </li> -->
 
                                             </ul>
                                         </div>
