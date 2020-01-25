@@ -31,6 +31,7 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 @foreach($data as $value)
                     <tr>
                         <td>{{$value->id}}</td>

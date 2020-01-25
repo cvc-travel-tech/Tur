@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96d3c712-e5fc-4f95-b938-3147d70177a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Tur.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Tur.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataTables/SightseeingDatatables.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/SightseeingDatatables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helper/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helper/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_24_230024_create_bookings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_24_230024_create_bookings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Booking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Booking/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Booking/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579900164597</updated>
       <workItem from="1579900173409" duration="8800000" />
-      <workItem from="1579974815090" duration="12802000" />
+      <workItem from="1579974815090" duration="13073000" />
     </task>
     <servers />
   </component>
