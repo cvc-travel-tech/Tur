@@ -387,18 +387,17 @@
                             @foreach($hotels as $value)
                                 <div class="item-tour ">
                                     <div class="thumb-image ">
-                                        <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
 
                                         <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($value['images'][1])->file_path) }}">
-                                        {{--</a>--}}
+                                
                                     </div>
                                     <div class="location">
                                         <i class="icofont-paper-plane"></i>
                                     </div>
                                     <div class="item-title">
-                                        <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
+                <a href="{{ url('hotel_ditails/'.$value['id']) }}">
                                         {{ $value->name }}
-                                        {{--</a>--}}
+        </a>
                                     </div>
                                     <div class="service-review tour-review">
                                         <div class="list-star">

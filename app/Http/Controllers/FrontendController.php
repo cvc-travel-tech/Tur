@@ -203,6 +203,13 @@ class FrontendController extends Controller
     }
 
 
+
+    public function hotel_ditails($id)
+    {
+        $hotel_ditails = Hotel::find($id);
+        return view('hotel_ditails', compact('hotel_ditails'));
+    }
+    
     
 
 }

@@ -129,7 +129,7 @@
                                     <div class="col-lg-4 col-md-6">
                                         <div class="item-tour ">
                                             <div class="thumb-image ">
-                                                <a target="_blank" href="sofitel-taksim.html">
+                                                <a target="_blank" href="{{ url('hotel_ditails/'.$value['id']) }}">
 
                                                     <img class='img-responsive lazy' data-src="{{ asset('storage/tmp/uploads/'.\App\Images::find($value['images'][0])->file_path) }}" alt=''>
                                                 </a>
@@ -138,7 +138,7 @@
                                                 <i class="icofont-paper-plane"></i> Istanbul
                                             </div>
                                             <div class="item-title">
-                                                <a target="_blank" href="sofitel-taksim.html">
+                                                <a target="_blank" href="{{ url('hotel_ditails/'.$value['id']) }}">
 
                                                 {{ $value['name'] }}
                                                 </a>
