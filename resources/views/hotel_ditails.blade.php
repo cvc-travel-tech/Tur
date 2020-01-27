@@ -92,7 +92,7 @@
                         <div class="col-md-12">
                             <div class="g-header">
                                 <div class="left">
-                                    <h2> Sofitel Taksim </h2>
+                                    <h2> {{ $hotel_ditails['name'] }} </h2>
                                 </div>
 
 
@@ -122,11 +122,10 @@
                             <div class="g-gallery">
                                 <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135"
                                     data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
-                                    <a href="#"><img src="images/Sofitel Taksim4.jpg"></a>
-                                    <a href="#"><img src="images/Sofitel Taksim1.jpg"></a>
-                                    <a href="#"><img src="images/Sofitel Taksim2.jpg"></a>
-                                    <a href="#"><img src="images/Sofitel Taksim3.jpg"></a>
-                                    <a href="#"><img src="images/Sofitel Taksim5.jpg"></a>
+@foreach($hotel_ditails['images'] as $im)
+<a href="#"><img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($im['0'])->file_path) }}"></a>                   
+@endforeach
+
                                 </div>
                             </div>
 
@@ -143,21 +142,8 @@
 
                                     <body>
                                         <p class="MsoNormal"
-                                            style="text-align: left; direction: ltr; unicode-bidi: embed;"><span
-                                                style="mso-bidi-language: AR-EG;">Sofitel Istanbul Taksim is located in
-                                                Istanbul, 70 meters from Taksim Square, and offers accommodation with a
-                                                bar and
-                                                private parking. Facilities at this property include a restaurant, a
-                                                24-hour front desk, room service, as well as free
-                                                WiFi in All around the property, while the hotel has family rooms.?<span
-                                                    style="mso-spacerun: yes;">&nbsp; </span>.<span
-                                                    style="mso-spacerun: yes;">&nbsp; </span>The air-conditioned rooms
-                                                feature a flat-screen TV with satellite channels, kettle, shower, hair
-                                                dryer and desk. All
-                                                rooms at this hotel include a wardrobe and a private bathroom.
-
-                                                Guests at Sofitel Istanbul Taksim can enjoy a buffet breakfast.<span
-                                                    style="mso-spacerun: yes;">&nbsp; </span>Sofitel Taksim </span>
+                                            style="text-align: left; direction: ltr; unicode-bidi: embed;">
+                                            {!!  $hotel_ditails['overview']   !!}
                                         </p>
                                     </body>
 
@@ -396,223 +382,18 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content relative">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Sign Up</h4>
-                        <span class="c-pointer" data-dismiss="modal" aria-label="Close">
-                            <i class="input-icon field-icon fa">
-                                <img src="http://cvc.vacations/images/ico_close.svg" alt="close">
-                            </i>
-                        </span>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form bravo-form-register" method="post">
-                            <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" autocomplete="off"
-                                            placeholder="First Name">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-first_name"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="last_name" autocomplete="off"
-                                            placeholder="Last Name">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-last_name"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="company_name" autocomplete="off"
-                                            placeholder="Company Name">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-company_name"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="company_url" autocomplete="off"
-                                            placeholder="Company Url">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-company_url"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="city" autocomplete="off"
-                                            placeholder="City">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-city"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="phone" autocomplete="off"
-                                            placeholder="Phone">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-phone"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="address" autocomplete="off"
-                                            placeholder="Address">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-address"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="address2" autocomplete="off"
-                                            placeholder="Address 2">
-                                        <i class="input-icon field-icon fa"><img
-                                                src="http://cvc.vacations/images/ico_fullname_signup.svg"></i>
-                                        <span class="invalid-feedback error error-address2"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" autocomplete="off"
-                                    placeholder="Email *">
-                                <i class="input-icon field-icon fa"><img
-                                        src="http://cvc.vacations/images/ico_email_login_form.svg"></i>
-                                <span class="invalid-feedback error error-email"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" autocomplete="off"
-                                    placeholder="Password *">
-                                <i class="input-icon field-icon fa"><img
-                                        src="http://cvc.vacations/images/ico_pass_login_form.svg"></i>
-                                <span class="invalid-feedback error error-password"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="term">
-                                    <input id="term" type="checkbox" name="term" class="mr5">
-                                    I have read and accept the Terms and Privacy Policy
-                                    <span class="checkmark fcheckbox"></span>
-                                </label>
-                                <div><span class="invalid-feedback error error-term"></span></div>
-                            </div>
-                            <div class="error message-error invalid-feedback"></div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary form-submit">
-                                    Sign Up
-                                    <span class="spinner-grow spinner-grow-sm icon-loading" role="status"
-                                        aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="c-grey f14 text-center">
-                                Already have an account?
-                                <a href="#" data-target="#login" data-toggle="modal">Log In</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="cdn-browser-modal" class="modal fade">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div id="cdn-browser" class="cdn-browser d-flex flex-column" v-cloak>
-                        <div class="files-nav flex-shrink-0">
-                            <div class="d-flex justify-content-between">
-                                <div class="col-left d-flex align-items-center">
-                                    <div class="filter-item">
-                                        <input type="text" placeholder="Search file name...." class="form-control"
-                                            v-model="filter.s" @keyup.enter="filter.page = 1;reloadLists()">
-                                    </div>
-                                    <div class="filter-item">
-                                        <button class="btn btn-default" @click="filter.page = 1;reloadLists()">
-                                            <i class="fa fa-search"></i> Search</button>
-                                    </div>
-                                    <div class="filter-item">
-                                        <small><i>Total: {{total}} files</i></small>
-                                    </div>
-                                </div>
-                                <div class="col-right">
-                                    <i class="fa-spin fa fa-spinner icon-loading"></i>
-                                    <button class="btn btn-success btn-pick-files">
-                                        <span><i class="fa fa-upload"></i> Upload</span>
-                                        <input multiple type="file" name="files[]" ref="files">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="upload-new" v-show="showUploader" display="none">
-                            <input type="file" name="filepond[]" class="my-pond">
-                        </div>
-                        <div class="files-list">
-                            <div class="files-wraps " :class="'view-'+viewType">
-                                <file-item v-for="(file,index) in files" :key="index" :view-type="viewType"
-                                    :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
-                            </div>
-                            <p class="no-files-text text-center" v-show="!total && apiFinished" style="display: none">No
-                                file
-                                found</p>
-                            <div class="text-center" v-if="totalPage > 1">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item" :class="{disabled:filter.page <= 1}">
-                                            <a class="page-link" v-if="filter.page <=1">Previous</a>
-                                            <a class="page-link" href="#" v-if="filter.page > 1"
-                                                v-on:click="changePage(filter.page-1,$event)">Previous</a>
-                                        </li>
-                                        <li class="page-item" v-if="p >= (filter.page-3) && p <= (filter.page+3)"
-                                            :class="{active: p == filter.page}" v-for="p in totalPage"
-                                            @click="changePage(p,$event)">
-                                            <a class="page-link" href="#">{{p}}</a></li>
-                                        <li class="page-item" :class="{disabled:filter.page >= totalPage}">
-                                            <a v-if="filter.page >= totalPage" class="page-link">Next</a>
-                                            <a href="#" class="page-link" v-if="filter.page < totalPage"
-                                                v-on:click="changePage(filter.page+1,$event)">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="browser-actions d-flex justify-content-between flex-shrink-0"
-                            v-if="selected.length">
-                            <div class="col-left" v-show="selected.length">
-                                <div v-if="selected && selected.length">
-                                    <div class="count-selected">{{selected.length}} file selected</div>
-                                    <div class="clear-selected" @click="selected=[]"><i>unselect</i></div>
-                                </div>
-                            </div>
-                            <div class="col-right" v-show="selected.length">
-                                <button class="btn btn-primary" :class="{disabled:!selected.length}"
-                                    @click="sendFiles">Use
-                                    file</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+
+
+        
+
         <script type="text/x-template" id="file-item-template">
                     <div class="file-item" :class="fileClass(file)">
                         <div class="inner" :class="{active:selected.indexOf(file.id) !== -1 }" @click="selectFile(file)" :title="file.file_name">
                             <div class="file-thumb" v-if="viewType=='grid'" v-html="getFileThumb(file)">
                             </div>
-                            <div class="file-name">{{file.file_name}}</div>
+                            <div class="file-name">file.file_name</div>
                             <span class="file-checked-status" v-show="selected.indexOf(file.id) !== -1">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg>
                             </span>

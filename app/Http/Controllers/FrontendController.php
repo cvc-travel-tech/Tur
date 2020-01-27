@@ -184,8 +184,6 @@ class FrontendController extends Controller
         $data['outroLines'] = ['Thank You For Using Our Website!'];
 
         sendEmail($data);
-
-        dd(111);
          
 
         foreach(request('room_type') as $k=>$val){
@@ -240,6 +238,12 @@ class FrontendController extends Controller
     }
 
 
+    public function hotel_ditails($id)
+    {
+        $hotel_ditails = Hotel::find($id);
+        return view('hotel_ditails', compact('hotel_ditails'));
+    }
+    
     
 
 }
