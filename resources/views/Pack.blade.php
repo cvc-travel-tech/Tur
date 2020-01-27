@@ -270,7 +270,6 @@
                             </div>
                             <div class="list-item">
                                 <div class="row">
-                                    @foreach($packages as $package)
                                         <div class="col-lg-4 col-md-6">
                                             <div class="item-tour ">
                                                 <div class="thumb-image ">
@@ -283,13 +282,13 @@
                                                 <div class="item-title">
                                                     <a target="_blank" href="{{route('front.package_details',$package)}}">
                                                         <h4>
-                                                            {{$package->name}}
                                                         </h4>
                                                     </a>
 
 
                                                 </div>
 
+                                            
                                                 <div class="info">
                                                     <div class="g-price">
                                                         <div class="price">
@@ -300,9 +299,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
-                                    @endforeach
                                 </div>
 
 

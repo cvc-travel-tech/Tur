@@ -13,14 +13,13 @@
     <title>Sofitel Taksim </title>
 
 
-    <link rel="canonical" href="http://cvc.vacations/hotel/four-seasons-hotel-alexandria" />
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="libs/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="libs/icofont/icofont.min.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
-    <link href="css/season.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+    <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/libs/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/season.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/libs/daterange/daterangepicker.css') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel='stylesheet' id='google-font-css-css'
@@ -51,9 +50,9 @@
         gtag('config', 'UA-154435778-1');
     </script>
 
-    <link href="module/tour/css/tour.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
-    <link rel="stylesheet" type="text/css" href="libs/fotorama/fotorama.css" />
+    <link href="{{ asset('frontend/module/tour/css/tour.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/libs/fotorama/fotorama.css') }}" />
 
     <style id="custom-css">
         body {
@@ -64,7 +63,7 @@
             font-weight: ; */
         }
     </style>
-    <link href="libs/carousel-2/owl.carousel.css" rel="stylesheet">
+    <link href="{{ asset('frontend/libs/carousel-2/owl.carousel.css') }}" rel="stylesheet">
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -84,127 +83,8 @@
 <body class="">
     <div class="bravo_wrap">
 
+        @include('Frontend.nav')
 
-        <div class="bravo_topbar">
-            <div class="container">
-                <div class="content">
-                    <div class="topbar-left">
-
-                        <a href="index.html" class="bravo-logo">
-                            <img src="images/Najaf Logo (1).png" alt="">
-                        </a>
-                    </div>
-
-                    <div>
-
-
-
-                    </div>
-                    <div class="topbar-right">
-
-                        <div>
-
-                            <div class="st-list socials">
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </div>
-
-                            <ul class="topbar-items">
-                                <li class="hidden-xs hidden-sm"><a href="mailto:info@cvc.vacations"
-                                        target="">info@to-istanbultours.com</a>
-                                </li>
-                            </ul>
-                            <ul class="topbar-items">
-                                <li class="login-item">
-                                    <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
-                                </li>
-
-                                <li class="signup-item">
-                                    <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign
-                                        Up</a>
-                                </li>
-                            </ul>
-                            <form id="logout-form-topbar" action="http://cvc.vacations/logout" method="POST"
-                                style="display: none;">
-                                <input type="hidden" name="_token" value="EE5rATYx5t2ANAMJBt1T04D2IRTIl2xEFIqwBLE6">
-                            </form>
-                            </li>
-                        </div>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bravo_header">
-            <div class="container">
-                <div class="content">
-                    <div class="header-left">
-
-                        <div class="bravo-menu">
-                            <ul class="main-menu menu-generated">
-                                <li class=""><a target="" href="index.html">Home</a></li>
-                                <li class="   "><a target="" href="destinations.html">Destinations <i
-                                            class="fa fa-angle-down"></i></a>
-                                    <ul class="children-menu menu-dropdown">
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                    </ul>
-                                </li>
-                                <li class="    "><a target="" href="tour.html">Turkey Packages</a></li>
-                                <li class="  "><a target="" href="about.html">About Us</a></li>
-                                <li class=""><a target="" href="contact-us.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-right">
-                        <button class="bravo-more-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="bravo-menu-mobile">
-                <div class="user-profile">
-                    <div class="b-close"><i class="icofont-scroll-left"></i></div>
-                    <div class="avatar">
-                        <i class="icofont-user-alt-2"></i>
-                    </div>
-                    <ul class="topbar-items">
-                        <li class="login-item">
-                            <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
-                        </li>
-                        <li class="signup-item">
-                            <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="g-menu">
-                    <ul class="main-menu menu-generated">
-                        <li class=""><a target="" href="index.html">Home</a></li>
-                        <li class="   "><a target="" href="destinations.html">Destinations <i
-                                    class="fa fa-angle-down"></i></a>
-                            <ul class="children-menu menu-dropdown">
-                                <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                            </ul>
-                        </li>
-                        <li class="    "><a target="" href="tour.html">Turkey Packages</a></li>
-                        <li class="  "><a target="" href="about.html">About Us</a></li>
-                        <li class=""><a target="" href="contact-us.html">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="bravo_detail_tour">
             <div class="bravo_content">
                 <div class="container">
@@ -743,8 +623,8 @@
 
 
 
-        <script src="libs/lazy-load/intersection-observer.js"></script>
-        <script async src="libs/lazy-load/lazyload.min.js"></script>
+        <script src="{{ asset('frontend/libs/lazy-load/intersection-observer.js') }}"></script>
+        <script async src="{{ asset('frontend/libs/lazy-load/lazyload.min.js') }}"></script>
         <script>
             // Set the options to make LazyLoad self-initialize
             window.lazyLoadOptions = {
@@ -759,29 +639,29 @@
 
 
         </script>
-        <script src="libs/jquery-3.3.1.min.js"></script>
-        <script src="libs/vue/vue.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="module/media/js/browser.js"></script>
-        <script src="libs/carousel-2/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="libs/daterange/moment.min.js"></script>
-        <script type="text/javascript" src="libs/daterange/daterangepicker.min.js"></script>
-        <script src="js/functions.js"></script>
-        <script src="js/home.js"></script>
-        <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('frontend/libs/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('frontend/libs/vue/vue.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('frontend/module/media/js/browser.js') }}"></script>
+        <script src="{{ asset('frontend/libs/carousel-2/owl.carousel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/libs/daterange/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/libs/daterange/daterangepicker.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/functions.js') }}"></script>
+        <script src="{{ asset('frontend/js/home.js') }}"></script>
+        <script src="{{ asset('frontend/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
         <script src='https://maps.googleapis.com/maps/api/js?key='></script>
-        <script src='libs/infobox.js'></script>
+        <script src="{{ asset('frontend/libs/infobox.js') }}"></script>
         <script src='http://cvc.vacations/module/core/js/map-engine.js'></script>
         <script>
             jQuery(function ($) {
             })
         </script>
 
-        <script type="text/javascript" src="libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
-        <script type="text/javascript" src="libs/fotorama/fotorama.js"></script>
-        <script type="text/javascript" src="libs/sticky/jquery.sticky.js"></script>
-        <script type="text/javascript" src="module/tour/js/single-tour.js"></script>
+        <script type="text/javascript" src="{{ asset('frontend/libs/ion_rangeslider/js/ion.rangeSlider.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/libs/fotorama/fotorama.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/libs/sticky/jquery.sticky.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('frontend/module/tour/js/single-tour.js') }}"></script>
     </div>
 </body>
 

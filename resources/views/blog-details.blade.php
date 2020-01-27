@@ -241,141 +241,127 @@
 
 @include('Frontend.nav')
 
+<div class="bravo-news">
 
 
-        <div class="bravo-news">
-
-
-            <div class="container text-center pt-10" style="color: #9a9a9a;padding-top: 21px;">
-                <h3>
-                </h3>
-            </div>
-            <div class="blog-breadcrumb hidden-xs">
-                <div class="container">
-                    <ul>
-                        <li><a href="index.html"> Home</a></li>
-                        <li class="">
-                            <a href="blogo.html">News</a>
-                        </li>
-                        <li class="active">
-                            Test
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-            <div class="bravo_content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="article">
-                                <div class="header">
-                                </div>
-                                <h2 class="title">Test</h2>
-                                <div class="post-info">
-                                    <ul>
-                                        <li>
-                                            <span> BY </span>
-
-                                        </li>
-                                        <li> DATE 12/16/2019 </li>
-                                    </ul>
-                                </div>
-                                <div class="post-content">
-                                  
-                       
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quos tempora
-                                            rem vero harum laborum, officia dolorem alias suscipit in hic. Facilis
-                                            similique saepe eos voluptas at, perspiciatis unde corporis.
-                                        </p>
-                        
-                                 
-                                </div>
-                                <div class="space-between">
-                                    <div class="share"> Share
-                                        <a class="facebook share-item"
-                                            href="https://www.facebook.com/sharer/sharer.php?u=https://cvc.vacations/news/morning-in-the-northern-sea&amp;title=Grand Egyptian Museum"
-                                            target="_blank" original-title="Facebook"><i
-                                                class="fa fa-facebook fa-lg"></i></a>
-                                        <a class="twitter share-item"
-                                            href="https://twitter.com/share?url=https://cvc.vacations/news/morning-in-the-northern-sea&amp;title=Grand Egyptian Museum"
-                                            target="_blank" original-title="Twitter"><i
-                                                class="fa fa-twitter fa-lg"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-
+<div class="container text-center pt-10" style="color: #9a9a9a;padding-top: 21px;">
+    <h3>
+    </h3>
+</div>
+<div class="blog-breadcrumb hidden-xs">
+    <div class="container">
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li class="">
+                <a href="blogo.html">News</a>
+            </li>
+            <li class="active">
+                Test
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="bravo_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="article">
+                    <div class="header">
+                        <div class="image-blog">
+                            <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($Blog['mainImage'])->file_path) }}" alt="">
                         </div>
+                    </div>
 
+                    <h2 class="title">{{ $Blog['title'] }}</h2>
+                    <div class="post-info">
+                        <ul>
 
+                            <li> DATE : {{ $Blog['created_at'] }} </li>
+                        </ul>
+                    </div>
+                    <div class="post-content">
+                    
 
-
-
-
+                        {!! $Blog['description'] !!} 
                         
-                        <div class="col-md-3">
-                            <aside class="sidebar-right">
-                                <div class="sidebar-widget widget_search">
-                                    <form method="get" class="search" action="#">
-                                        <input type="text" class="form-control" value="" name="s"
-                                            placeholder="Search ...">
-                                        <button type="submit" class="icon_search"></button>
-                                    </form>
-                                </div>
-                                <div class="sidebar-widget">
-                                    <div class="sidebar-title">
-                                        <h4>About Us</h4>
-                                    </div>
-                                    <div class="textwidget">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    </div>
-                                </div>
-                                <div class="sidebar-widget widget_bloglist">
-                                    <div class="sidebar-title">
-                                        <h4>Recent News</h4>
-                                    </div>
-                                    <ul class="thumb-list">
-                                        <li>
-                                            <div class="content">
-                                                <h5 class="thumb-list-item-title">
-                                                    <a href="#">test</a>
-                                                </h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="content">
-                                                <h5 class="thumb-list-item-title">
-                                                    <a href="#">Test</a>
-                                                </h5>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sidebar-widget widget_category">
-                                    <div class="sidebar-title">
-                                        <h4>Categories</h4>
-                                    </div>
-                                    <ul>
-                                    </ul>
-                                </div>
-                                <div class="sidebar-widget widget_tag_cloud">
-                                    <div class="sidebar-title">
-                                        <h4>Tags</h4>
-                                    </div>
-                                    <div class="tagcloud">
-                                        <ul>
-                                            <a href="#" class="tag-cloud-link">test</a>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </aside>
+
+                    </div>
+                    <div class="space-between">
+                        <div class="share"> Share
+                            <a class="facebook share-item"
+                                href="https://www.facebook.com/sharer/sharer.php?u=https://cvc.vacations/news/morning-in-the-northern-sea&amp;title=Grand Egyptian Museum"
+                                target="_blank" original-title="Facebook"><i
+                                    class="fa fa-facebook fa-lg"></i></a>
+                            <a class="twitter share-item"
+                                href="https://twitter.com/share?url=https://cvc.vacations/news/morning-in-the-northern-sea&amp;title=Grand Egyptian Museum"
+                                target="_blank" original-title="Twitter"><i
+                                    class="fa fa-twitter fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+            <div class="col-md-3">
+                <aside class="sidebar-right">
+                    <div class="sidebar-widget widget_search">
+                        <form method="get" class="search" action="#">
+                            <input type="text" class="form-control" value="" name="s"
+                                placeholder="Search ...">
+                            <button type="submit" class="icon_search"></button>
+                        </form>
+                    </div>
+                    <div class="sidebar-widget">
+                        <div class="sidebar-title">
+                            <h4>About Us</h4>
+                        </div>
+                        <div class="textwidget">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="sidebar-widget widget_bloglist">
+                        <div class="sidebar-title">
+                            <h4>Recent News</h4>
+                        </div>
+                        <ul class="thumb-list">
+                            <li>
+                                <div class="content">
+                                    <h5 class="thumb-list-item-title">
+                                        <a href="#">test</a>
+                                    </h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <h5 class="thumb-list-item-title">
+                                        <a href="#">Test</a>
+                                    </h5>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget widget_category">
+                        <div class="sidebar-title">
+                            <h4>Categories</h4>
+                        </div>
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget widget_tag_cloud">
+                        <div class="sidebar-title">
+                            <h4>Tags</h4>
+                        </div>
+                        <div class="tagcloud">
+                            <ul>
+                                <a href="#" class="tag-cloud-link">test</a>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
+    </div>
+</div>
+</div>
+
 
         @endsection

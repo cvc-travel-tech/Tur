@@ -13,6 +13,7 @@ use App\Repositories\PackageRepository;
 use App\Images;
 use App\PackagePrice;
 use App\Package;
+use App\Blog;
 
 class FrontendController extends Controller
 {
@@ -36,12 +37,13 @@ class FrontendController extends Controller
         $features = setting('site', 'features');
 
         $destinations = Destination::latest()->limit(5)->withCount('Hotels')->with('tmpImg', 'Img')->get();
+        $Package = Package::all();
 
         $hotels = Hotel::latest()->limit(8)->get();
 
         $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
 
-        return view('index', compact('features', 'titles', 'destinations', 'hotels'));
+        return view('index', compact('features', 'titles', 'destinations', 'hotels','Package'));
     }
 
 
@@ -73,12 +75,6 @@ class FrontendController extends Controller
     }
 
 
-    public function travel_free()
-    {
-        return view('travel-free');
-
-    }
-
 
     public function logiin()
     {
@@ -102,9 +98,10 @@ class FrontendController extends Controller
     }
 
 
-    public function blog_details()
+    public function blog_details($id)
     {
-        return view('blog-details');
+        $Blog = Blog::find($id);
+        return view('blog-details', compact('Blog'));
     }
 
 
@@ -124,7 +121,9 @@ class FrontendController extends Controller
 
         }
 
-        return view('Pack', compact('packages'));
+        // dd($package);
+
+        return view('Pack', compact('packages','package'));
     }
 
 
@@ -141,6 +140,10 @@ class FrontendController extends Controller
 
         return view('Booking', compact('package'));
     }
+
+
+
+
 
     public function saveBooking()
     {
@@ -189,5 +192,17 @@ class FrontendController extends Controller
         return redirect()->back();
     }
 
+
+
+
+    public function destinations_details($id)
+    {
+        $hotels = Hotel::all()->where('destination_id',$id);
+        $destinations_details = Destination::find($id);
+        return view('destinations_details', compact('destinations_details','hotels'));
+    }
+
+
+    
 
 }

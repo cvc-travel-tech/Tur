@@ -8,7 +8,7 @@
 
 
     <title>{{ $setting['site[name]'] }}</title>
-    <meta name="description" content="" />
+    <meta name="description" content="{{ $setting['site[description]'] }}" />
 
 
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">

@@ -213,10 +213,10 @@
 
         @include('Frontend.nav')
 
-
+        
         <div class="page-template-content">
             <div class="bravo-form-search-tour"
-                 style="background-image: url(' {{ asset('frontend/images/tur.jpg') }}' ) !important;">
+                 style="background-image: url('{{ asset('storage/tmp/uploads/'.\App\Images::find($setting['site[mine-img]'])->file_path) }}' ) !important;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -263,7 +263,7 @@
                             @if(isset($destinations[0]))
                                 <div class="col-lg-8">
                                     <div class="destination-item ">
-                                        <a href="">
+                                        <a href="{{ url('destinations_details/'.$destinations[0]->id) }}">
                                             <div class="image"
                                                  style="background: url('storage/tmp/uploads/{{ $destinations[0]->tmpImg->file_path }}')">
                                                 <div class="effect">
@@ -286,9 +286,9 @@
                                 @if($key!=0)
                                     <div class="col-lg-4">
                                         <div class="destination-item ">
-                                            <a href="">
+                                            <a href="{{ url('destinations_details/'.$value->id) }}">
                                                 <div class="image"
-                                                     style="background: url('storage/tmp/uploads/{{ $destinations[0]->tmpImg->file_path }}')">
+                                                     style="background: url('storage/tmp/uploads/{{ $value->tmpImg->file_path }}')">
                                                     <div class="effect">
 
                                                     </div>
@@ -310,25 +310,37 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
             <div class="container">
                 <div class="bravo-list-tour">
                     <div class="title">
                         Turkey Packages
                     </div>
+
+
+
                     <div class="list-item">
                         <div class="owl-carousel">
+
+
+@foreach($Package as $pac)
+
+
                             <div class="item-tour ">
                                 <div class="thumb-image ">
-                                    <img src="images/izmir-vue.jpg">
-                                    <!-- <a href="http://cvc.vacations/tour/11-day-egypt-complete-tour"></a> -->
-                                    </a>
+                                    <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($pac['images'][0])->file_path) }}">
                                 </div>
                                 <div class="location">
                                 </div>
                                 <div class="item-title">
-                                    <a href="11 Day Turkey Complete.html">
+                                    <a href="{{ url('Package/'.$pac['name']) }}">
                                         <h4>
-                                            11 Day Turkey Complete Tour
+                                        {{ $pac['name'] }}
+
                                         </h4>
                                     </a>
 
@@ -351,115 +363,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <img src="images/galata_tower.jpg">
-                                    <!-- <a href="http://cvc.vacations/tour/7-day-standard-egypt-tour"> -->
-                                    </a>
-                                </div>
-                                <div class="location">
-                                </div>
-                                <div class="item-title">
-                                    <a href="7 Day Standard Tureky.html">
-                                        <h4>
-                                            7 Day Standard Turkey Tour
-                                        </h4>
-                                    </a>
 
-
-                                </div>
-
-                                <div class="info">
-                                    <div class="duration">
-                                        <i class="icofont-wall-clock"></i> Day
-                                    </div>
-                                    <div class="g-price">
-                                        <div class="prefix">
-                                            <i class="icofont-flash"></i>
-                                            <span class="fr_text">from</span>
-                                        </div>
-                                        <div class="price">
-                                            <span class="onsale"></span>
-                                            <span class="text-price">$0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <img src="images/istanbul-destination-guide-turkey.jpg">
-                                    <!-- <a href="http://cvc.vacations/tour/14-day-egypt-grand-tour"> -->
-
-                                    </a>
-                                </div>
-                                <div class="location">
-                                </div>
-                                <div class="item-title">
-                                    <a href="14 Day turkey Grand Tour.html">
-                                        <h4>
-                                            14 Day Turkey Grand Tour
-                                        </h4>
-                                    </a>
-
-
-                                </div>
-
-                                <div class="info">
-                                    <div class="duration">
-                                        <i class="icofont-wall-clock"></i> Day
-                                    </div>
-                                    <div class="g-price">
-                                        <div class="prefix">
-                                            <i class="icofont-flash"></i>
-                                            <span class="fr_text">from</span>
-                                        </div>
-                                        <div class="price">
-                                            <span class="onsale"></span>
-                                            <span class="text-price">$0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-tour ">
-                                <div class="thumb-image ">
-                                    <!-- <a href="http://cvc.vacations/tour/9-day-standard-with-red-sea-egypt-tour"> -->
-                                    <img src="images/navegando-bosforo-estambul-atardecer.jpg">
-
-                                    </a>
-                                </div>
-                                <div class="location">
-                                </div>
-                                <div class="item-title">
-                                    <a href="9 Day Standard with Red Sea Turkey Tour.html">
-                                        <h4>
-                                            9 Day Standard Turkey
-                                        </h4>
-                                    </a>
-
-
-                                </div>
-
-                                <div class="info">
-                                    <div class="duration">
-                                        <i class="icofont-wall-clock"></i> Day
-                                    </div>
-                                    <div class="g-price">
-                                        <div class="prefix">
-                                            <i class="icofont-flash"></i>
-                                            <span class="fr_text">from</span>
-                                        </div>
-                                        <div class="price">
-                                            <span class="onsale"></span>
-                                            <span class="text-price">$0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+@endforeach
 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+            
             <div class="container">
                 <div class="bravo-list-tour">
                     <div class="title">
@@ -473,7 +389,7 @@
                                     <div class="thumb-image ">
                                         <!-- <a href="http://cvc.vacations/hotel/four-season-nile-plaza-cairo"> -->
 
-                                        <img src="images/14099845.jpg">
+                                        <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($value['images'][1])->file_path) }}">
                                         {{--</a>--}}
                                     </div>
                                     <div class="location">
