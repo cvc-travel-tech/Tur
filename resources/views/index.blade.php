@@ -431,3 +431,4 @@
         </div>
 
 @endsection
+@include('frontlog')

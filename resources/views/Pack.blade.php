@@ -245,7 +245,7 @@
 
 
         <div class="bravo_search_tour">
-            <div class="bravo_banner" style="background-image: url(images/636615511596718861LA.jpg);padding:200px 0 ;">
+            <div class="bravo_banner" style="background-image: url( {{ asset('frontend/images/636615511596718861LA.jpg') }});padding:200px 0 ;">
                 <div class="container">
                     <h1>
                         <!-- Discover The Best istanbul Tour -->
@@ -268,44 +268,52 @@
 
                                 </div>
                             </div>
-                            <div class="list-item">
-                                <div class="row">
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="item-tour ">
-                                                <div class="thumb-image ">
-                                                    <img src="{{asset('storage/tmp/uploads/large').'/'.$package->package_images[0]->file_path}}">
-                                                    <a target="_blank" href="{{route('front.package_details',$package)}}">
-                                                    </a>
-                                                </div>
-                                                <div class="location">
-                                                </div>
-                                                <div class="item-title">
-                                                    <a target="_blank" href="{{route('front.package_details',$package)}}">
-                                                        <h4>
-                                                        </h4>
-                                                    </a>
+                            
+                    <div class="list-item">
+                        <div class="row">
 
 
-                                                </div>
+@foreach($Package as $pac)
 
-                                            
-                                                <div class="info">
-                                                    <div class="g-price">
-                                                        <div class="price">
-                                                            <span class="onsale"></span>
-                                                            <span class="text-price">
-                                                                ${{$package->three_p_price}}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                            </div>
-                                        </div>
+                            <div class="item-tour ">
+                                <div class="thumb-image ">
+                                    <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($pac['images'][0])->file_path) }}">
+                                </div>
+                                <div class="location">
+                                </div>
+                                <div class="item-title">
+                                    <a href="{{ url('Package/'.$pac['name']) }}">
+                                        <h4>
+                                        {{ $pac['name'] }}
+
+                                        </h4>
+                                    </a>
+
+
                                 </div>
 
-
+                                <div class="info">
+                                    <div class="duration">
+                                        <i class="icofont-wall-clock"></i> Day
+                                    </div>
+                                    <div class="g-price">
+                                        <div class="prefix">
+                                            <i class="icofont-flash"></i>
+                                            <span class="fr_text">from</span>
+                                        </div>
+                                        <div class="price">
+                                            <span class="onsale"></span>
+                                            <span class="text-price">$0</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+@endforeach
+
+                        </div>
+                    </div>
                             <div class="bravo-pagination">
 
                                 <span class="count-string">Showing 1 - 8 of 8 Tours</span>
