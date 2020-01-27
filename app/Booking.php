@@ -28,7 +28,9 @@ class Booking extends Model
         'no_of_children',
         'status',
         'total_price',
-        'package_id'
+        'package_id',
+        'verification_code',
+        'is_verified'
     );
 
     public function package()
