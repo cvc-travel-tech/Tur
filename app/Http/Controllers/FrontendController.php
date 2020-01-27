@@ -147,7 +147,10 @@ class FrontendController extends Controller
 
     public function saveBooking()
     {
-//        dd(request()->all());
+
+        $verification_code = rand(pow(10, 3), pow(10, 4) - 1);
+
+
         $booking = Booking::create([
             'gender' => request('gender'),
             'language' => request('language'),
@@ -164,8 +167,26 @@ class FrontendController extends Controller
             'no_of_rooms'=>request('no_of_rooms'),
             'no_of_children'=>request('no_of_children'),
             'status'=>1,
-            'package_id' => request('package_id')
+            'package_id' => request('package_id'),
+            'verification_code' => $verification_code
         ]);
+
+
+        $data['to'] = $booking->email;
+
+
+        $data ['level'] = 'success';
+
+        $data['introLines'] = ['Visit Link : http://localhost:8000/verify?email='.$booking->email
+        .'&hash=' . $verification_code];
+
+
+        $data['outroLines'] = ['Thank You For Using Our Website!'];
+
+        sendEmail($data);
+
+        dd(111);
+         
 
         foreach(request('room_type') as $k=>$val){
             BookingRoomType::create([
@@ -200,6 +221,22 @@ class FrontendController extends Controller
         $hotels = Hotel::all()->where('destination_id',$id);
         $destinations_details = Destination::find($id);
         return view('destinations_details', compact('destinations_details','hotels'));
+    }
+
+
+    public function bookingVerify()
+    {
+        $booking = Booking::where('email',request('email'))->where('verification_code',request('amp;hash'))->first();
+
+        
+        if($booking->is_verified == 1){
+            return 'you had verified this booking before.';
+        }
+
+        $booking->update(['is_verified' => 1]);
+
+        return 'booking has been verified successfully!';
+
     }
 
 
