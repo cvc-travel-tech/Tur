@@ -462,6 +462,13 @@
 
 
                         </div>
+
+
+
+
+
+
+
                         <div class="col-md-12 col-lg-3">
                             <div class="bravo_tour_book_wrap">
                                 <div class="bravo_tour_book">
@@ -482,63 +489,19 @@
                                                 <div class="date-wrapper clearfix" @click="openStartDate">
                                                     <div class="check-in-wrapper">
                                                         <label>Start Date</label>
-                                                        <div class="render check-in-render">start_date_html</div>
+                                                        <div class="render check-in-render"><input type="date" ></div>
                                                     </div>
                                                     <i class="fa fa-angle-down arrow"></i>
                                                 </div>
                                                 <input type="text" class="start_date" ref="start_date" style="height: 1px; visibility: hidden">
                                             </div>
-                                            <div class="" v-if="person_types">
-                                                <div class="form-group form-guest-search" v-for="(type,index) in person_types">
-                                                    <div class="guest-wrapper d-flex justify-content-between align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <label>type.name</label>
-                                                            <div class="render check-in-render">type.desc</div>
-                                                            <div class="render check-in-render">type.display_price per people</div>
-                                                        </div>
-                                                        <div class="flex-shrink-0">
-                                                            <div class="input-number-group">
-                                                                <i class="icon ion-ios-remove-circle-outline" @click="minusPersonType(type)"></i>
-
-                                                                <span class="input">type.number</span>
-                                                                <i class="icon ion-ios-add-circle-outline" @click="addPersonType(type)"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group form-guest-search" v-else>
-                                                <div class="guest-wrapper d-flex justify-content-between align-items-center">
-                                                    <div class="flex-grow-1">
-                                                        <label>Guests</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-                                                        <div class="input-number-group">
-                                                            <i class="icon ion-ios-remove-circle-outline"></i>
-                                                            <span class="input">guests</span>
-                                                            <i class="icon ion-ios-add-circle-outline"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-section-group" v-if="extra_price.length">
-                                                <h4 class="form-section-title">Extra prices:</h4>
-                                                <div class="form-group " v-for="(type,index) in extra_price">
-                                                    <div class="extra-price-wrap d-flex justify-content-between">
-                                                        <div class="flex-grow-1">
-                                                            <label><input type="checkbox" v-model="type.enable"> type.name</label>
-                                                            <div class="render" v-if="type.price_type">type.price_type</div>
-                                                        </div>
-                                                        <div class="flex-shrink-0">type.price_html
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                          
+                                   
+                                            
+              
                                         <div v-html="html"></div>
                                         <div class="submit-group">
-                                            <a href="{{route('front.booking',$package)}}" class="btn btn-large" @click="doSubmit($event)" :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}" name="submit">
+                                            <a href="{{ url('Booking',$package->id)}}" class="btn btn-large  btn-primary"  name="submit">
                                                 <span v-if="step == 1">BOOK NOW</span>
                                                 <span v-if="step == 2">Book Now</span>
                                                 <i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>
@@ -549,6 +512,18 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <div class="row end_tour_sticky">
                         <div class="col-md-12">
@@ -556,6 +531,8 @@
                     </div>
                 </div>
             </div>
+
+            
             <div class="bravo-more-book-mobile">
                 <div class="container">
                     <div class="left">
@@ -593,10 +570,12 @@
                         </div>
                     </div>
                     <div class="right">
-                        <a class="btn btn-primary bravo-button-book-mobile">Book Now</a>
+                        <a href="{{ url('Booking',$package->id)}}" class="btn btn-primary bravo-button-book-mobile">Booking Now</a>
                     </div>
                 </div>
             </div>
+
+
         </div>
         <div class="bravo_footer">
             <div class="mailchimp">

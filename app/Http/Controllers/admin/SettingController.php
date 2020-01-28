@@ -12,6 +12,7 @@ class SettingController extends Controller
     private $request;
     private $repo;
     private $data;
+
     /**
      * Instantiate a new controller instance.
      *
@@ -116,6 +117,17 @@ class SettingController extends Controller
                         ],
 
                     ],
+                ], 'about[imgAbout]' => [
+                    'type' => 'img',
+                    'tital' => 'About Image',
+                    'width' => '12',
+                    'placeholder' => 'Pick a size...',
+                ],
+                'about[content]' => [
+                    'type' => 'ckeditor',
+                    'tital' => 'Site Description',
+                    'width' => '12',
+                    'placeholder' => 'Pick a size...',
                 ],
 
             ],
@@ -149,7 +161,7 @@ class SettingController extends Controller
             ]
         ];
         // dd();
-
+        //dd($form);
         $data = $this->data;
         $data['page-doc'] = "Setting";
         return view('admin.Setting.index', compact('data', 'form', 'inputVal'));
@@ -158,8 +170,8 @@ class SettingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

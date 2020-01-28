@@ -23,7 +23,10 @@ class BlogDatatables extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('title', '<a href="{{route("admin.Blog.edit" , $id)}}"> {{$title}}</a>')
-            ->addColumn('action', 'Blog.action')
+            ->addColumn('action', '<a href="{{route("admin.Blog.delete",$id)}}"
+                                                class="btn btn-danger">
+                                                DELETE
+                                                </a> ')
             ->rawColumns(['title', 'action']);
     }
 
@@ -96,6 +99,9 @@ class BlogDatatables extends DataTable
             // Column::make('description'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::make('action'),
+
+
         ];
     }
 

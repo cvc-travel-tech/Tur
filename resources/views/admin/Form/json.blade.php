@@ -1,6 +1,7 @@
 <!-- Basic text input -->
 <?php
 $tital= null;
+
 $modal_id = random_code();
 
 ?>

@@ -43,14 +43,7 @@
 
 									</ul>
                                 </li>
-                                <li>
-									<a href="#"><i class="icon-stack"></i> <span>Sightseeing</span></a>
-									<ul>
-										<li class="{{ active('sightseeing') }}" ><a href="{{route('admin.sightseeing.index')}}"><i class="icon-stack"></i> All</a></li>
-                                        <li  class="{{ active('sightseeing' , 'create') }}"><a href="{{route('admin.sightseeing.create')}}"><i class="icon-stack"></i> Create</a></li>
-									</ul>
-                                </li>
-
+                               
 
                                     <li>
 									<a href="#"><i class="icon-stack"></i> <span>Hotel</span></a>
@@ -91,7 +84,6 @@
 									<a href="#"><i class="icon-stack"></i> <span>Settings</span></a>
 									<ul>
 										<li class="{{ active('setting') }}" ><a href="{{route('admin.setting.index')}}"><i class="icon-stack"></i> All</a></li>
-                                        <li  class="{{ active('setting' , 'create') }}"><a href="{{route('admin.setting.create')}}"><i class="icon-stack"></i> Create</a></li>
 									</ul>
 								</li>
 

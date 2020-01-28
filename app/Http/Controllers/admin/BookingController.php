@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Booking;
 use App\Http\Controllers\Controller;
 use App\Package;
+use App\Booking;
 
 class BookingController extends Controller
 {
@@ -57,5 +58,7 @@ class BookingController extends Controller
     public function destroy($id)
     {
         //
+        Booking::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

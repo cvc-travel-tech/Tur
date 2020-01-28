@@ -50,7 +50,9 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('about');
+        $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
+
+        return view('about', compact('titles'));
     }
 
 
@@ -105,6 +107,7 @@ class FrontendController extends Controller
     }
 
 
+    /*
     public function pack()
     {
         $packages = $this->Package->getQuery();
@@ -125,7 +128,7 @@ class FrontendController extends Controller
 
         return view('Pack', compact('packages', 'package'));
     }
-
+*/
 
     public function Complete()
     {
@@ -258,5 +261,11 @@ class FrontendController extends Controller
         return view('hotel_ditails', compact('hotel_ditails'));
     }
 
+
+    public function Pack()
+    {
+        $Package = Package::all();
+        return view('Pack', compact('Package'));
+    }
 
 }
