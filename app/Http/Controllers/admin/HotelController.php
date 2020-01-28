@@ -8,6 +8,7 @@ use App\Repositories\HotelRepository;
 use App\Repositories\DestinationRepository;
 use App\Http\Requests\HotelRequest;
 use Illuminate\Http\Request;
+use App\Hotel;
 
 class HotelController extends Controller
 {
@@ -178,5 +179,7 @@ class HotelController extends Controller
     public function destroy($id)
     {
         //
+        Hotel::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

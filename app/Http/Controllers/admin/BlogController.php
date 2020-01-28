@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\BlogRepository;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
-
+use App\Blog;
 
 class BlogController extends Controller
 {
@@ -146,5 +146,7 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
+        Blog::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

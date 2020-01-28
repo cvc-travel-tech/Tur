@@ -8,6 +8,7 @@ use App\Repositories\CruiseRepository;
 use App\Repositories\DestinationRepository;
 use App\Http\Requests\CruiseRequest;
 use Illuminate\Http\Request;
+use App\Cruise;
 
 class CruiseController extends Controller
 {
@@ -178,5 +179,7 @@ class CruiseController extends Controller
     public function destroy($id)
     {
         //
+        Cruise::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

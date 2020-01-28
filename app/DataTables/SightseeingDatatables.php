@@ -23,7 +23,10 @@ class SightseeingDatatables extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('name', '<a href="{{route("admin.sightseeing.edit" , $slug)}}"> {{$name}}</a>')
-            ->addColumn('action', 'sightseeingdatatables.action')
+            ->addColumn('action', '<a href="{{route("admin.sightseeing.delete",$id)}}"
+                                                class="btn btn-danger">
+                                                DELETE
+                                                </a> ')
             ->rawColumns(['name', 'action']);
     }
 
@@ -96,6 +99,7 @@ class SightseeingDatatables extends DataTable
             // Column::make('description'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::make('action'),
         ];
     }
 

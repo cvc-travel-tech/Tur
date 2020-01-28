@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\DestinationRepository;
 use App\Http\Requests\LocationRequest;
 use Illuminate\Http\Request;
+use App\Destination;
 
 class DestinationController extends Controller
 {
@@ -244,5 +245,7 @@ class DestinationController extends Controller
     public function destroy($id)
     {
         //
+        Destination::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
