@@ -38,7 +38,6 @@ Route::group(['prefix' => 'backend', 'as' => 'admin.'], function () {
         Route::get('hotel/{id}/delete', 'HotelController@destroy')->name('hotel.delete');
 
         Route::resource('setting', 'SettingController');
-        Route::get('setting/{id}/delete', 'SettingController@destroy')->name('setting.delete');
 
         Route::get('products/data', 'DestinationController@reposList')->name('product.data');
         Route::any('logout', 'AdminAuthController@Logout')->name('logout');
