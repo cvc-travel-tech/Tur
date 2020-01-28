@@ -62,7 +62,7 @@ if (!function_exists('getImg')) {
             return asset('storage/tmp/uploads/') . "/" . $size . "/" . Images::find($id)->file_path;
         } else {
 
-            return asset('storage/tmp/uploads/')  . "/" . Images::find($id)->file_path;
+            return asset('storage/tmp/uploads/') . "/" . Images::find($id)->file_path;
         }
     }
 }
@@ -70,10 +70,13 @@ if (!function_exists('getImg')) {
 if (!function_exists('SeoInput')) {
     function SeoInput($seo = null)
     {
-        $test = "" . Form::bsText('seo_title', $seo['seo_title']) .
-            Form::bsTextarea('seo_desc', $seo['seo_desc'])
-            . Form::img('seo_image', $seo['seo_image']) . "";
-        return $test;
+        if ($seo != null) {
+            $test = "" . Form::bsText('seo_title', $seo['seo_title']) .
+                Form::bsTextarea('seo_desc', $seo['seo_desc'])
+                . Form::img('seo_image', $seo['seo_image']) . "";
+            return $test;
+        }
+
     }
 }
 
@@ -87,7 +90,7 @@ if (!function_exists('setting')) {
             # code...
             if ($Setting->val != null) {
                 if ($type == 'img') {
-                    return getImg($Setting->val,  $size);
+                    return getImg($Setting->val, $size);
                 }
                 return $Setting->val;
             }

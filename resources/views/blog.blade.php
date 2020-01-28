@@ -256,37 +256,31 @@ a.bravo-logo img{
 
 
 
-
-
-    <div class="post_item ">
-
-
+ @foreach($blogs as $blog)
+ <div class="post_item ">
         <div class="header">
                         <div class="post-inner">
                 <h4 class="post-title">
-                    <a class="text-darken" href="{{ url('blog_details') }}"> test</a>
+                   <div class="image-blog">
+                        <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($blog['innerImage'])->file_path) }}" alt="">
+                   </div>
+
+                    <a class="text-darken" href="{{ url('blog_details/'. $blog['id'] ) }}">{{ $blog['title'] }}</a>
                 </h4>
                 <div class="post-info">
                     <ul>
-                        <li>
-                                                            <span class="avatar-text"> </span>
-                                                        <span> BY  </span>
-                             
-                        </li>
-                        <li> DATE   01/03/2020  </li>
+                        <li> DATE : {{ $blog['created_at'] }}  </li>
                     </ul>
                 </div>
                 <div class="post-desciption">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, 
+                {{ $blog['description'] }}
                 </div>
-                <a class="btn-readmore" href="blog-details.html">Read More</a>
+                <a class="btn-readmore" href="#">Read More</a>
             </div>
         </div>
-
-        
     </div>
     
-
+@endforeach
 
 
 

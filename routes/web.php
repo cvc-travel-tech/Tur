@@ -31,9 +31,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/Package/{slug}', 'FrontendController@Packages_details')->name('front.package_details');
 
-Route::get('/blog_details', 'FrontendController@blog_details');
+Route::get('/blog_details/{id}', 'FrontendController@blog_details');
 
 Route::get('/Pack', 'FrontendController@Pack');
 
 Route::get('/Complete', 'FrontendController@Complete');
-Route::get('/Booking/{id}', 'FrontendController@Booking');
+Route::get('/Booking/{id}', 'FrontendController@Booking')->name('front.booking');
+Route::post('/Booking/save', 'FrontendController@saveBooking')->name('front.booking.save');
+
+
+
+Route::get('/destinations_details/{id}', 'FrontendController@destinations_details');
+
+Route::get('/hotel_ditails/{id}', 'FrontendController@hotel_ditails');
+

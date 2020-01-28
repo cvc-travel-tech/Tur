@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96d3c712-e5fc-4f95-b938-3147d70177a9" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Booking/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Booking/index.blade.php" afterDir="false" />
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +15,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+<<<<<<< HEAD
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1485438205">
@@ -67,10 +71,30 @@
       <find>feat</find>
       <find>SettingController</find>
     </findStrings>
+=======
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -103,6 +127,8 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
+=======
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
@@ -219,6 +245,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1935" />
     <option name="height" value="1050" />
@@ -257,25 +284,34 @@
         </subPane>
       </pane>
     </panes>
+=======
+  <component name="ProjectId" id="1WthSR51n92zXfyMrAvIfZaCBr2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mostql/qatar" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/DataTables" />
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Laravel Projects\tur\app\DataTables" />
+      <recent name="D:\Laravel Projects\tur\resources\views\admin" />
+      <recent name="D:\Laravel Projects\tur\app\Http\Controllers\admin" />
+      <recent name="D:\Laravel Projects\tur\app" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -287,6 +323,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579900164597</updated>
+<<<<<<< HEAD
       <workItem from="1579900173409" duration="9224000" />
       <workItem from="1579961596629" duration="612000" />
     </task>
@@ -477,5 +514,44 @@
         </state>
       </provider>
     </entry>
+=======
+      <workItem from="1579900173409" duration="8800000" />
+      <workItem from="1579974815090" duration="13073000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="427" y="174" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579977721478">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="427" y="174" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1579977721478" />
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579983928691">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1579983928691" />
+    <state x="514" y="199" key="NewPhpClassDialog" timestamp="1579977743553">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="514" y="199" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1579977743553" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1579977731417">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579977731417" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1579974821137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579974821137" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1579987828377">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1579987828377" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1579988613385">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1579988613385" />
+>>>>>>> 66dfaa0f25e14f7e2cad5f3cf0f46868684275a3
   </component>
 </project>

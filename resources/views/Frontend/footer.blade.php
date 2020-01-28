@@ -16,7 +16,7 @@
                                         <div class="media-left hidden-xs col-lg-3" style="
     /* width: 98px; */
 ">
-                                            <img src="images/watercolor-football-clipart-2.png" style="
+                                            <img src="{{ asset('frontend/images/watercolor-football-clipart-2.png') }}" style="
     width: 100%;
 ">
                                         </div>
@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-5 col-lg-6">
-                                    <form action="http://cvc.vacations/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+                                    <form action="" class="subcribe-form bravo-subscribe-form bravo-form">
                                         <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
                                         <div class="form-group">
                                             <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
@@ -80,16 +80,16 @@
                                         </div>
                                         <div class="sub">
                                             <a href="#">
-                                                <img src="images/facebook.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/facebook.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/whatsapp.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/whatsapp.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/skype.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/skype.png') }}" style="width:10%">
                                             </a>
                                             <a href="#">
-                                                <img src="images/twitter.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/twitter.png') }}" style="width:10%">
                                             </a>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                                             Skype
                                         </div>
                                         <div class="sub">
-
+                                        istanbultours
                                         </div>
                                     </div>
                                     <div class="contact">
@@ -138,11 +138,11 @@
                                 <div class="context">
                                     <ul>
 
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="destinations.html">Destinations</a></li>
-                                        <li><a href="tour.html">Turkey Packages</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li><a href="{{ url('destinations') }}">Destinations</a></li>
+                                        <li><a href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                                        <li><a href="{{ url('about') }}">About Us</a></li>
+                                        <li><a href="{{ url('contact')  }}">Contact Us</a></li>
                                         <li><a href="{{ url('blog') }}">Blog</a></li>
                                     </ul>
                                 </div>

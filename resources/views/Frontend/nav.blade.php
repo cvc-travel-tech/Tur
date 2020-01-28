@@ -3,7 +3,7 @@
         <div class="content">
             <div class="topbar-left">
 
-                <a href="" class="bravo-logo">
+                <a href="{{ url('/') }}" class="bravo-logo">
                     <img src="{{ asset('storage/tmp/uploads/'.\App\Images::find($setting['site[logo]'])->file_path) }}" alt="sandpad">
 
 
@@ -41,12 +41,9 @@
                     <ul class="topbar-items">
                         <ul class="topbar-items">
                             <li class="login-item">
-                                <a href="#login" data-toggle="modal" data-target="#login" class="login">Login</a>
+                                <a href="#login" data-toggle="modal" data-target="#login" class="login  btn btn-info">Login</a>
                             </li>
-                            <li class="signup-item">
-                                <a href="#register" data-toggle="modal" data-target="#register" class="signup">Sign
-                                    Up</a>
-                            </li>
+
                         </ul>
                 </div>
 
@@ -63,10 +60,9 @@
                 <div class="bravo-menu">
                     <ul class="main-menu menu-generated">
                         <li class=""><a target="" href="{{ url('/') }}">Home</a></li>
-                        <li class="   "><a target="" href="{{ url('destinations') }}">Destinations <i
-                                    class="fa fa-angle-down"></i></a>
+                        <li class="   "><a target="" href="{{ url('destinations') }}">Destinations </a>
                         </li>
-                        <li class="    "><a target="" href="tour.html">Turkey Packages</a></li>
+                        <li class="    "><a target="" href="{{ url('Pack')  }}">Turkey Packages</a></li>
                         <li class="  "><a target="" href="{{ url('about') }}">About Us</a></li>
                         <li class=""><a target="" href="{{ url('contact')  }}">Contact Us</a></li>
                     </ul>
@@ -87,23 +83,23 @@
             </div>
             <ul>
                 <li>
-                    <a href="http://cvc.vacations/user/profile">
+                    <a href="">
                         <i class="icofont-user-suited"></i> Hi,
                     </a>
                 </li>
                 <li>
-                    <a href="http://cvc.vacations/user/profile">
+                    <a href="">
                         <i class="icon ion-md-construct"></i> My profile
                     </a>
                 </li>
                 <li>
-                    <a href="http://cvc.vacations/admin"><i class="icon ion-ios-ribbon"></i> Dashboard</a>
+                    <a href=""><i class="icon ion-ios-ribbon"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out"></i> Logout
                     </a>
-                    <form id="logout-form" action="http://cvc.vacations/logout" method="POST" style="display: none;">
+                    <form id="logout-form" action="" method="POST" style="display: none;">
                         <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
                     </form>
                 </li>
@@ -114,20 +110,20 @@
                 <li class=""><a target="" href="/">Home</a></li>
                 <li class="   "><a target="" href="/page/destinations">Destinations <i class="fa fa-angle-down"></i></a>
                     <ul class="children-menu menu-dropdown">
-                        <li class=" "><a target="" href="http://cvc.vacations/location/cairo">Cairo</a></li>
-                        <li class="  "><a target="" href="http://cvc.vacations/location/luxor">Luxor</a></li>
-                        <li class="  "><a target="" href="http://cvc.vacations/location/aswan-1">Aswan</a></li>
-                        <li class=" "><a target="" href="http://cvc.vacations/location/alexandria-1">Alexandria</a></li>
-                        <li class=" "><a target="" href="http://cvc.vacations/location/sharm-el-sheikh">Sharm
+                        <li class=" "><a target="" href="">Cairo</a></li>
+                        <li class="  "><a target="" href="">Luxor</a></li>
+                        <li class="  "><a target="" href="">Aswan</a></li>
+                        <li class=" "><a target="" href="">Alexandria</a></li>
+                        <li class=" "><a target="" href="">Sharm
                                 El-Sheikh</a></li>
-                        <li class=" "><a target="" href="http://cvc.vacations/location/sahl-hasheesh">Sahl Hasheesh</a>
+                        <li class=" "><a target="" href="">Sahl Hasheesh</a>
                         </li>
                     </ul>
                 </li>
                 <li class="    ">
                     <a target="" href="/tour"></a>
                 </li>
-                <li class="  "><a target="" href="http://cvc.vacations/page/about-us">About Us</a></li>
+                <li class="  "><a target="" href="">About Us</a></li>
                 <li class=""><a target="" href="/contact">Contact Us</a></li>
             </ul>
         </div>

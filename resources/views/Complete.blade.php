@@ -538,7 +538,7 @@
 
                                         <div v-html="html"></div>
                                         <div class="submit-group">
-                                            <a class="btn btn-large" @click="doSubmit($event)" :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}" name="submit">
+                                            <a href="{{route('front.booking',$package)}}" class="btn btn-large" @click="doSubmit($event)" :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}" name="submit">
                                                 <span v-if="step == 1">BOOK NOW</span>
                                                 <span v-if="step == 2">Book Now</span>
                                                 <i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>

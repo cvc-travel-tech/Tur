@@ -85,6 +85,13 @@ class SettingController extends Controller
                             'width' => '60%',
                             'placeholder' => 'Pick a size...',
                         ],
+
+                        'tital' => [
+                            'type' => 'text',
+                            'tital' => 'Tital',
+                            'width' => '60%',
+                            'placeholder' => 'Pick a size...',
+                        ],
                         'icon' => [
                             'type' => 'img',
                             'tital' => 'Icon',

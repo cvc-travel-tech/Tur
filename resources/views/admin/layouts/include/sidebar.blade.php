@@ -50,6 +50,8 @@
                                         <li  class="{{ active('sightseeing' , 'create') }}"><a href="{{route('admin.sightseeing.create')}}"><i class="icon-stack"></i> Create</a></li>
 									</ul>
                                 </li>
+
+
                                     <li>
 									<a href="#"><i class="icon-stack"></i> <span>Hotel</span></a>
 									<ul>
@@ -59,6 +61,44 @@
 								</li>
 								<!-- /main -->
 
+								<li>
+									<a href="#"><i class="icon-stack"></i> <span>Blog</span></a>
+									<ul>
+										<li class="{{ active('Blog') }}" ><a href="{{route('admin.Blog.index')}}"><i class="icon-stack"></i> All</a></li>
+                                        <li  class="{{ active('Blog' , 'create') }}"><a href="{{route('admin.Blog.create')}}"><i class="icon-stack"></i> Create</a></li>
+									</ul>
+								</li>
+
+								<li>
+									<a href="#"><i class="icon-stack"></i> <span>Boooking</span></a>
+									<ul>
+										<li class="{{ active('booking') }}" ><a href="{{route('admin.booking.index')}}"><i class="icon-stack"></i> All</a></li>
+                                        <li  class="{{ active('booking' , 'create') }}"><a href="{{route('admin.booking.create')}}"><i class="icon-stack"></i> Create</a></li>
+									</ul>
+								</li>
+
+
+								<li>
+									<a href="#"><i class="icon-stack"></i> <span>Packages</span></a>
+									<ul>
+										<li class="{{ active('package') }}" ><a href="{{route('admin.package.index')}}"><i class="icon-stack"></i> All</a></li>
+                                        <li  class="{{ active('package' , 'create') }}"><a href="{{route('admin.package.create')}}"><i class="icon-stack"></i> Create</a></li>
+									</ul>
+								</li>
+
+
+								<li>
+									<a href="#"><i class="icon-stack"></i> <span>Settings</span></a>
+									<ul>
+										<li class="{{ active('setting') }}" ><a href="{{route('admin.setting.index')}}"><i class="icon-stack"></i> All</a></li>
+                                        <li  class="{{ active('setting' , 'create') }}"><a href="{{route('admin.setting.create')}}"><i class="icon-stack"></i> Create</a></li>
+									</ul>
+								</li>
+
+
+
+
+								
 							</ul>
 						</div>
 					</div>

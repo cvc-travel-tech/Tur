@@ -1,118 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>پنل مدیریت | صفحه ورود</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{ asset('admin/plugins/iCheck/square/blue.css')}}">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-  <!-- bootstrap rtl -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/bootstrap-rtl.min.css')}}">
-  <!-- template rtl version -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/custom-style.css')}}">
+    <title>Login </title>
+    <meta name="description" content="" />
+
+    <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/login.css') }}" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+ 
+
+
+    <!--End of Tawk.to Script-->
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>ورود به سایت</b></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">{{trans('login.login')}}</p>
 
+<body>
+    <div class="cont">
+        <div class="demo">
+            <div class="login">
+                <!-- <div class="login__check"></div> -->
+                <div class="logo-tech">
+                    <img src="{{ asset('frontend/images/logo-13 (1).png') }}" style="width: 78%;
+    margin-top: 78px;
+    margin-left: 20px;">
+                </div>
+
+                
     <form method="POST" action="{{ route('admin.dologin') }}">
         @csrf
-        <div class="input-group mb-3">
-          <input type="email" class="form-control @error('email') is-invalid @enderror " name="email"placeholder="{{trans('login.email')}}" value="{{ old('email') }}">
-          <div class="input-group-append">
-            <span class="fa fa-envelope input-group-text"></span>
-          </div>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
 
-        <div class="input-group mb-3">
-          <input type="password" class="form-control @error('password') is-invalid @enderror " name="password"placeholder="{{trans('login.password')}}" value="{{ old('password') }}">
-          <div class="input-group-append">
-            <span class="fa fa-lock input-group-text"></span>
-          </div>
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="checkbox icheck">
-              <label>
-                <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <label class="form-check-label" for="remember">
-                        {{trans('login.remember_me')}}
-                </label>
-              </label>
+
+        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+
+
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                <div class="login__form">
+                    <div class="login__row">
+                        <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                        </svg>
+                        <input name="email"  value="{{ old('email') }}"  type="text" class="login__input name  @error('email') is-invalid @enderror " placeholder="Username" />
+                     
+                    </div>
+
+
+                    <div class="login__row">
+                        <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                        </svg>
+                        <input type="password" name="password" class="login__input pass   @error('password') is-invalid @enderror " placeholder="Password" value="{{ old('password') }}" />
+            
+                    </div>
+
+ 
+
+                    <button type="submit" class="login__submit">Sign in</button>
+                </div>
+
+</form>
+
+
             </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">{{trans('login.login')}}</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
 
-      {{-- <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fa fa-facebook mr-2"></i> ورود با اکانت فیسوبک
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fa fa-google-plus mr-2"></i> ورود با اکانت گوگل
-        </a>
-      </div> --}}
-      <!-- /.social-auth-links -->
 
-      {{-- <p class="mb-1">
-        <a href="#">رمز عبورم را فراموش کرده ام.</a>
-        </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">ثبت نام</a>
-      </p> --}}
-    </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="{{ asset('admin/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- iCheck -->
-<script src="{{ asset('admin/plugins/iCheck/icheck.min.js')}}"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass   : 'iradio_square-blue',
-      increaseArea : '20%' // optional
-    })
-  })
-</script>
+
+     
+    <script>
+        $(document).ready(function () {
+
+            var animating = false,
+                submitPhase1 = 1100,
+                submitPhase2 = 400,
+                logoutPhase1 = 800,
+                $login = $(".login"),
+                $app = $(".app");
+
+            function ripple(elem, e) {
+                $(".ripple").remove();
+                var elTop = elem.offset().top,
+                    elLeft = elem.offset().left,
+                    x = e.pageX - elLeft,
+                    y = e.pageY - elTop;
+                var $ripple = $("<div class='ripple'></div>");
+                $ripple.css({ top: y, left: x });
+                elem.append($ripple);
+            };
+
+            $(document).on("click", ".login__submit", function (e) {
+                if (animating) return;
+                animating = true;
+                var that = this;
+                ripple($(that), e);
+                $(that).addClass("processing");
+                setTimeout(function () {
+                    $(that).addClass("success");
+                    setTimeout(function () {
+                        $app.show();
+                        $app.css("top");
+                        $app.addClass("active");
+                    }, submitPhase2 - 70);
+                    setTimeout(function () {
+                        $login.hide();
+                        $login.addClass("inactive");
+                        animating = false;
+                        $(that).removeClass("success processing");
+                    }, submitPhase2);
+                }, submitPhase1);
+            });
+
+            $(document).on("click", ".app__logout", function (e) {
+                if (animating) return;
+                $(".ripple").remove();
+                animating = true;
+                var that = this;
+                $(that).addClass("clicked");
+                setTimeout(function () {
+                    $app.removeClass("active");
+                    $login.show();
+                    $login.css("top");
+                    $login.removeClass("inactive");
+                }, logoutPhase1 - 120);
+                setTimeout(function () {
+                    $app.hide();
+                    animating = false;
+                    $(that).removeClass("clicked");
+                }, logoutPhase1);
+            });
+
+        });
+    </script>
+
 </body>
-</html>
