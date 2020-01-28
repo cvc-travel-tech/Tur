@@ -37,7 +37,7 @@ Route::get('/Pack', 'FrontendController@Pack');
 
 Route::get('/Complete', 'FrontendController@Complete');
 Route::get('/Booking/{id}', 'FrontendController@Booking')->name('front.booking');
-Route::post('/Booking/save', 'FrontendController@saveBooking')->name('front.booking.save');
+Route::post('/Booking/save/', 'FrontendController@saveBooking')->name('front.booking.save');
 
 
 

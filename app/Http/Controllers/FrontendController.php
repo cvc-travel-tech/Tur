@@ -141,16 +141,18 @@ class FrontendController extends Controller
     {
         $package = Package::where('id', $id)->with('package_options', 'package_prices')->first();
 
+        $package_price = 'object_from_package_price'; //
+
         return view('Booking', compact('package'));
     }
 
 
-    public function saveBooking($id)
+    public function saveBooking()
     {
 
         $booking_id = DB::table('bookings')->insertGetId([
             'payment_method' => 1,
-            'package_id' => $id,
+            'package_id' => request('package_id'),
         ]);
 
         $index_loop = 0;

@@ -380,6 +380,7 @@
                                             <div class="col s6">
                                                 <h6>Accommodation Details</h6>
                                                 <hr>
+
                                                 {{--<div class="input-field ">--}}
                                                 {{--<select class="browser-default  form-control rooms-select"--}}
                                                 {{--name="no_of_adults" required>--}}
@@ -392,6 +393,7 @@
                                                 {{--<option value="6">6</option>--}}
                                                 {{--</select>--}}
                                                 {{--</div>--}}
+
                                                 <div class="input-field ">
                                                     <select class="browser-default form-control rooms-select"
                                                             id="nrGames"
@@ -447,7 +449,7 @@
                                                         <td>Total per PAX
                                                         </td>
                                                     </tr>
-                                                    @foreach($package->package_options()->get() as $value)
+                                                    @foreach($package->package_options as $value)
                                                         <tr>
 
                                                             <td>
@@ -582,7 +584,7 @@
                                             <li>
                                                 <div class="label">Start date:</div>
                                                 <div class="val">
-                                                    &nbsp;{{$package->package_prices()->first()->date}}
+                                                    &nbsp;{{$package->package_prices->first()->date}}
                                                 </div>
                                             </li>
                                             <li>
@@ -1102,7 +1104,12 @@
     <script src="{{ asset('frontend/js/home.js') }}"></script>
 
     <script src="{{ asset('frontend/module/booking/js/checkout.js') }}"></script>
+
     <script type="text/javascript">
+
+        var solo = 10;
+        var double = 10;
+
         jQuery(function () {
             $.ajax({
                 'url': bookingCore.url + '/booking/b8402bb9a01e4b021fbd627686dbe691/check-status',
