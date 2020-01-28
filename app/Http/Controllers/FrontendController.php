@@ -14,6 +14,7 @@ use App\Images;
 use App\PackagePrice;
 use App\Package;
 use App\Blog;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -43,7 +44,7 @@ class FrontendController extends Controller
 
         $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
 
-        return view('index', compact('features', 'titles', 'destinations', 'hotels','Package'));
+        return view('index', compact('features', 'titles', 'destinations', 'hotels', 'Package'));
     }
 
 
@@ -73,7 +74,6 @@ class FrontendController extends Controller
         return view('contact');
 
     }
-
 
 
     public function logiin()
@@ -123,7 +123,7 @@ class FrontendController extends Controller
 
         // dd($package);
 
-        return view('Pack', compact('packages','package'));
+        return view('Pack', compact('packages', 'package'));
     }
 
 
@@ -142,92 +142,106 @@ class FrontendController extends Controller
     }
 
 
-
-
-
-    public function saveBooking()
+    public function saveBooking($id)
     {
+
+        $booking_id = DB::table('bookings')->insertGetId([
+            'payment_method' => 1,
+            'package_id' => $id,
+        ]);
+
+        $index_loop = 0;
+
+        foreach (request('room_type') as $key => $value) {
+
+            for ($i = $index_loop; $i < $value + $index_loop; $i++) {
+                DB::table('booking_room_types')->insert([
+                    'booking_id' => $booking_id,
+                    'room_type' => $value,
+                    'gender' => request('gender.' . $i),
+                    'first_name' => request('first_name.' . $i),
+                    'last_name' => request('last_name.' . $i),
+                    'phone' => request('phone.' . $i),
+                    'nationality' => request('nationality.' . $i),
+                ]);
+            }
+
+            $index_loop += $value;
+
+        }
+
+//        dd(request()->all());
 
         $verification_code = rand(pow(10, 3), pow(10, 4) - 1);
 
+//        $booking = Booking::create([
+//            'gender' => request('gender'),
+//            'language' => request('language'),
+//            'first_name' => request('first_name'),
+//            'last_name' => request('last_name'),
+//            'email' => request('email'),
+//            'phone' => request('phone'),
+//            'city' => request('city'),
+//            'nationality' => request('nationality'),
+//            'country' => request('country'),
+//            'special_requirements' => request('special_requirements'),
+//            'payment_method' => request('payment_method'),
+//            'no_of_adults' => request('no_of_adults'),
+//            'no_of_rooms' => request('no_of_rooms'),
+//            'no_of_children' => request('no_of_children'),
+//            'status' => 1,
+//            'package_id' => request('package_id'),
+//            'verification_code' => $verification_code
+//        ]);
+//
+//
+//        $data['to'] = $booking->email;
+//
+//
+//        $data ['level'] = 'success';
+//
+//        $data['introLines'] = ['Visit Link : http://localhost:8000/verify?email=' . $booking->email
+//            . '&hash=' . $verification_code];
+//
+//
+//        $data['outroLines'] = ['Thank You For Using Our Website!'];
+//
+//        sendEmail($data);
 
-        $booking = Booking::create([
-            'gender' => request('gender'),
-            'language' => request('language'),
-            'first_name'=>request('first_name'),
-            'last_name'=>request('last_name'),
-            'email'=>request('email'),
-            'phone'=>request('phone'),
-            'city'=>request('city'),
-            'nationality'=>request('nationality'),
-            'country'=>request('country'),
-            'special_requirements'=>request('special_requirements'),
-            'payment_method'=>request('payment_method'),
-            'no_of_adults'=>request('no_of_adults'),
-            'no_of_rooms'=>request('no_of_rooms'),
-            'no_of_children'=>request('no_of_children'),
-            'status'=>1,
-            'package_id' => request('package_id'),
-            'verification_code' => $verification_code
-        ]);
-
-
-        $data['to'] = $booking->email;
-
-
-        $data ['level'] = 'success';
-
-        $data['introLines'] = ['Visit Link : http://localhost:8000/verify?email='.$booking->email
-        .'&hash=' . $verification_code];
-
-
-        $data['outroLines'] = ['Thank You For Using Our Website!'];
-
-        sendEmail($data);
-         
-
-        foreach(request('room_type') as $k=>$val){
-            BookingRoomType::create([
-                'booking_id' => $booking->id,
-                'room_type' => $val
-            ]);
-        }
 
         foreach (request('package_options') as $key => $value) {
-            $option_price = PackageOption::where('id',$value)->first()->price;
+            $option_price = PackageOption::where('id', $value)->first()->price;
             BookingPackageOption::create([
-                'booking_id' => $booking->id,
+                'booking_id' => $booking_id,
                 'package_option_id' => $value,
-                'no_of_pax'=>request('no_of_pax')[$key],
-                'price'=>$option_price,
+                'no_of_pax' => request('no_of_pax')[$key],
+                'price' => $option_price,
             ]);
         }
 
-        $booking->update([
-            'total_price' => BookingPackageOption::where('booking_id',$booking->id)->sum('price')
-        ]);
+//        $booking->update([
+//            'total_price' => BookingPackageOption::where('booking_id', $booking->id)->sum('price')
+//        ]);
 
 
         return redirect()->back();
     }
 
 
-
-
     public function destinations_details($id)
     {
-        $hotels = Hotel::all()->where('destination_id',$id);
+        $hotels = Hotel::all()->where('destination_id', $id);
         $destinations_details = Destination::find($id);
-        return view('destinations_details', compact('destinations_details','hotels'));
+        return view('destinations_details', compact('destinations_details', 'hotels'));
     }
 
 
     public function bookingVerify()
     {
-        $booking = Booking::where('email',request('email'))->where('verification_code',request('amp;hash'))->first();
+        $booking = Booking::where('email', request('email'))->where('verification_code', request('amp;hash'))->first();
 
-        
-        if($booking->is_verified == 1){
+
+        if ($booking->is_verified == 1) {
             return 'you had verified this booking before.';
         }
 
@@ -243,7 +257,6 @@ class FrontendController extends Controller
         $hotel_ditails = Hotel::find($id);
         return view('hotel_ditails', compact('hotel_ditails'));
     }
-    
-    
+
 
 }

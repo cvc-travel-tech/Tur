@@ -241,9 +241,8 @@
                                         <h4 class="title">
                                             {{ $value['tital'] }}
                                         </h4>
-                                        <div class="desc">Free cancellation on most tours, just in case things don&#039;t
-                                            go
-                                            as planned.
+                                        <div class="desc">
+                                            {{ $value['description'] }}
                                         </div>
                                     </div>
                                 </div>
