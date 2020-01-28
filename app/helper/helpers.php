@@ -2,12 +2,37 @@
 
 use App\Images;
 use App\Setting;
+use Illuminate\Mail\Markdown;
+use PHPMailer\PHPMailer\PHPMailer;
+
 
 if (!function_exists('random_code')) {
     function random_code()
     {
 
         return rand(1111, 9999);
+    }
+}
+
+if (!function_exists('sendEmail')) {
+
+    function sendEmail($data)
+    {
+        $markdown = new Markdown(view(), config('mail.markdown'));
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->CharSet = 'UTF-8';
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "tls";
+        $mail->Host = "mail.mazaj-app.com";
+        $mail->Port = 587;
+        $mail->Username = "info@mazaj-app.com";
+        $mail->Password = "KE)uA+?viHON";
+        $mail->SetFrom('info@mazaj-app.com  ', 'mazaj-app');
+        $mail->Subject = 'mazaj-app';
+        $mail->MsgHTML($markdown->render('vendor.notifications.email', $data));
+        $mail->AddAddress($data['to'], "");
+        $mail->Send();
     }
 }
 

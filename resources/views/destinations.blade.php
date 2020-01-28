@@ -185,15 +185,39 @@
                     Destinations
                 </div>
                 <div class="list-item">
+                <div class="row">
+
+
+                @if(isset($destinations[0]))
+                                <div class="col-lg-8">
+                                    <div class="destination-item ">
+                                        <a href="{{ url('destinations_details/'.$destinations[0]->id) }}">
+                                            <div class="image"
+                                                 style="background: url('storage/tmp/uploads/{{ $destinations[0]->tmpImg->file_path }}')">
+                                                <div class="effect">
+
+                                                </div>
+                                                <div class="content">
+                                                    <h4 class="title">{{ $destinations[0]->name }}</h4>
+                                                    <div class="desc"
+                                                         style="background: #ec991f;">{{ $destinations[0]->hotels_count }}
+                                                        Hotels
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
+
 
                     @foreach($destinations->chunk(3) as $chunked)
 
-                        <div class="row">
 
                             @foreach($chunked as $value)
                                 <div class="col-lg-4">
                                     <div class="destination-item ">
-                                        <a href="">
+                                        <a href="{{ url('destinations_details/'.$value->id) }}">
                                             <div class="image"
                                                  style="background: url('storage/tmp/uploads/{{ $destinations[0]->tmpImg->file_path }}')">
                                                 <div class="effect"></div>
@@ -207,14 +231,13 @@
                                 </div>
                             @endforeach
 
-                        </div>
 
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-
+    </div>
     <div class="container " style="padding-top: 40px;padding-bottom: 40px;">
         <div class="blog-content">
 
