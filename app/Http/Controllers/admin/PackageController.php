@@ -10,6 +10,7 @@ use App\Http\Requests\PackageRequest;
 use Illuminate\Http\Request;
 use App\PackagePrice;
 use App\PackageOption;
+use App\Package;
 
 class PackageController extends Controller
 {
@@ -285,5 +286,7 @@ class PackageController extends Controller
     public function destroy($id)
     {
         //
+        Package::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

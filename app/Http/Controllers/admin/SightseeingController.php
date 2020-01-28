@@ -8,6 +8,7 @@ use App\Repositories\SightseeingRepository;
 use App\Repositories\DestinationRepository;
 use App\Http\Requests\SightseeingRequest;
 use Illuminate\Http\Request;
+use App\Sightseeing;
 
 class SightseeingController extends Controller
 {
@@ -171,5 +172,7 @@ class SightseeingController extends Controller
     public function destroy($id)
     {
         //
+        Sightseeing::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

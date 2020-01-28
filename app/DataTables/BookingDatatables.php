@@ -23,7 +23,10 @@ class BookingDatatables extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('no_of_rooms', '<a href="{{route("admin.booking.edit" , $slug)}}"> {{$name}}</a>')
-            ->addColumn('action', 'bookingdatatables.action')
+            ->addColumn('action', '<a href="{{route("admin.booking.delete",$id)}}"
+                                                class="btn btn-danger">
+                                                DELETE
+                                                </a> ')
             ->rawColumns(['name', 'action']);
     }
 
@@ -96,6 +99,7 @@ class BookingDatatables extends DataTable
 //            Column::make('description'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::make('action'),
         ];
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use DataTables;
 use App\Http\Controllers\Controller;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -119,5 +120,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        Product::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

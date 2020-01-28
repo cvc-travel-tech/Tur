@@ -23,7 +23,10 @@ class DestinationDatatables extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('name', '<a href="{{route("admin.destination.edit" , $slug)}}"> {{$name}}</a>')
-            ->addColumn('action', 'destinationdatatables.action')
+            ->addColumn('action', '<a href="{{route("admin.Blog.delete",$id)}}"
+                                                class="btn btn-danger">
+                                                DELETE
+                                                </a> ')
             ->rawColumns(['name', 'action']);
     }
 
@@ -96,6 +99,7 @@ class DestinationDatatables extends DataTable
             // Column::make('description'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::make('action'),
         ];
     }
 

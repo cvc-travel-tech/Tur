@@ -23,7 +23,10 @@ class PackageDatatables extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('name', '<a href="{{route("admin.package.edit" , $slug)}}"> {{$name}}</a>')
-            ->addColumn('action', 'packagedatatables.action')
+            ->addColumn('action', '<a href="{{route("admin.package.delete",$id)}}"
+                                                class="btn btn-danger">
+                                                DELETE
+                                                </a> ')
             ->rawColumns(['name', 'action']);
     }
 
@@ -96,6 +99,7 @@ class PackageDatatables extends DataTable
             // Column::make('description'),
             Column::make('created_at'),
             Column::make('updated_at'),
+            Column::make('action'),
         ];
     }
 
