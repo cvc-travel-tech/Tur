@@ -49,7 +49,9 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('about');
+        $titles = json_encode(collect(setting('site', 'titles'))->pluck('tital'));
+
+        return view('about',compact('titles'));
     }
 
 

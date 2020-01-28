@@ -77,6 +77,8 @@ class SettingRepository
         $formatted = [
             'name' => isset($params['name']) ? $params['name'] : null,
             'description' => isset($params['description']) ? $params['description'] : null,
+            'imgAbout' => isset($params['imgAbout']) ? $params['imgAbout'] : null,
+            'content' => isset($params['content']) ? $params['content'] : null,
             'tmp_img' => isset($params['tmp_img']) ? $params['tmp_img'] : null,
             'img' => isset($params['img']) ? $params['img'] : null,
             'locations' => isset($params['locations']) ? $params['locations'] : null,

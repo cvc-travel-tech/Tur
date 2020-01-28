@@ -17,6 +17,8 @@
     <link href="{{ asset('frontend/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/libs/daterange/daterangepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/style.css') }}">
+    <link href="{{ asset('frontend/css/about.css') }}" rel="stylesheet">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel='stylesheet' id='google-font-css-css' href='https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600&display=swap' type='text/css' media='all' />

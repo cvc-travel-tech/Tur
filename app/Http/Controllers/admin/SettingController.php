@@ -82,13 +82,13 @@ class SettingController extends Controller
                         'tital' => [
                             'type' => 'text',
                             'tital' => 'Tital',
-                            'width' => '60%',
+                            'width' => '20%',
                             'placeholder' => 'Pick a size...',
                         ],
 
                         'tital' => [
                             'type' => 'text',
-                            'tital' => 'Tital',
+                            'tital' => 'tl',
                             'width' => '60%',
                             'placeholder' => 'Pick a size...',
                         ],
@@ -114,6 +114,17 @@ class SettingController extends Controller
                         ],
 
                     ],
+                ],  'about[imgAbout]' => [
+                    'type' => 'img',
+                    'tital' => 'About Image',
+                    'width' => '12',
+                    'placeholder' => 'Pick a size...',
+                ],
+                'about[content]' => [
+                    'type' => 'ckeditor',
+                    'tital' => 'Site Description',
+                    'width' => '12',
+                    'placeholder' => 'Pick a size...',
                 ],
 
             ],
@@ -147,7 +158,7 @@ class SettingController extends Controller
             ]
         ];
         // dd();
-
+        //dd($form);
         $data = $this->data;
         $data['page-doc'] = "Setting";
         return view('admin.Setting.index', compact('data', 'form', 'inputVal'));

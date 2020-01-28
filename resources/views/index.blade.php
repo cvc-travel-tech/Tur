@@ -337,7 +337,7 @@
                                 <div class="location">
                                 </div>
                                 <div class="item-title">
-                                    <a href="{{ url('Package/'.$pac['name']) }}">
+                                    <a href="{{ url('Package/'.$pac['slug']) }}">
                                         <h4>
                                         {{ $pac['name'] }}
 
