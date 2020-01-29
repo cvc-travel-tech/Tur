@@ -18,8 +18,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 
-
-
 class FrontendController extends Controller
 {
     private $Blog;
@@ -141,15 +139,18 @@ class FrontendController extends Controller
     }
 
 
-    public function Booking(Request $request ,$id)
+    public function Booking(Request $request, $id)
     {
 
-       $x= $request->input('dbook');
+        $x = $request->input('dbook');
+
         $package = Package::where('id', $id)->with('package_options', 'package_prices')->first();
 
-        $package_price = 'object_from_package_price'; //
+        $package_price = PackagePrice::where('date', request('dbook'))->first();
 
-        return view('Booking', compact('package','x'));
+//        dd($package_price);
+
+        return view('Booking', compact('package', 'x', 'package_price'));
     }
 
 
@@ -277,8 +278,8 @@ class FrontendController extends Controller
     }
 
 
-
-    public function spdf(){
+    public function spdf()
+    {
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML('<h1>Test</h1>');

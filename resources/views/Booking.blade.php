@@ -492,7 +492,6 @@
                                         <div class="row">
 
 
-
                                             <div class="room_1">
 
                                             </div>
@@ -612,7 +611,7 @@
                                             </li>
                                             <li class="final-total">
                                                 <div class="label">Total:</div>
-                                                <div class="val">$0</div>
+                                                <div class="val total_label">$0</div>
                                             </li>
                                         </ul>
                                     </div>
@@ -1106,8 +1105,13 @@
 
     <script type="text/javascript">
 
-        var solo = 10;
-        var double = 10;
+        var room_number = 0;
+        var total = 0;
+
+        var solo_price = '{{ $package_price->solo }}';
+        var p_p = '{{ $package_price->p_p }}';
+        var three_person = '{{ $package_price->three_person }}';
+        var sgl = '{{ $package_price->sgl }}';
 
         jQuery(function () {
             $.ajax({
@@ -1123,6 +1127,7 @@
         });
 
         $(document).delegate('#nrGames', 'change', function () {
+            room_number = $(this).val();
             var value = +$(this).val();
             var nr = 0;
             var elem = $("#games").empty();
@@ -1134,7 +1139,7 @@
 
                 elem.append(
                     $(
-                        '<select data-number="' + parseInt(nr + 1) + '" name="room_type[]" class="browser-default form-control rooms-select room_type"> <option value="" disabled selected>Room Type</option><option value="1">Single</option><option value="2">Double</option><option value="3">Triple</option> </select>', {
+                        '<select data-number="' + parseInt(nr + 1) + '" name="room_type[]" class="browser-default form-control rooms-select room_type ff' + parseInt(nr + 1) + '"> <option value="" disabled selected>Room Type</option><option value="1">Single</option><option value="2">Double</option><option value="3">Triple</option> </select>', {
                             name: "Team1Player" + nr
                         }
                     )
@@ -1148,7 +1153,37 @@
             for (var i = 0; i < $(this).val(); i++) {
                 $('.room_' + $(this).data('number')).append($('.clone_div').html());
             }
+            calculate();
         });
+
+        function calculate() {
+            total = 0;
+
+            if (room_number == 1 && $('.ff1').val() == 1) {
+                total = solo_price;
+            } else {
+                for (var i = 1; i < 5; i++) {
+                    f($('.ff' + i).val());
+                }
+            }
+
+            $('.total_label').text('$ ' + total);
+        }
+
+        function f(val) {
+
+            if (val > 0) {
+
+                if (val == 1) {
+                    total = parseInt(sgl) + parseInt(total);
+                } else if (val == 2) {
+                    total = parseInt(p_p) * 2 + parseInt(total);
+                } else {
+                    total = parseInt(three_person) * 3 + parseInt(total);
+                }
+
+            }
+        }
     </script>
 </div>
 </body>
