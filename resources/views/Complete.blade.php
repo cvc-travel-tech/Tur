@@ -11,8 +11,6 @@
 
     <title>Tareek Al-Oufk</title>
 
-    <meta name="twitter:image" content="http://cvc.vacations/uploads/demo/tour/banner-detail/banner-tour-16.jpg">
-    <link rel="canonical" href="http://cvc.vacations/tour/14-day-egypt-grand-tour"/>
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
@@ -24,19 +22,7 @@
     <link rel='stylesheet' id='google-font-css-css'
           href='https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600&display=swap' type='text/css'
           media='all'/>
-    <script>
-        var bookingCore = {
-            url: 'http://cvc.vacations',
-            booking_decimals: 0,
-            thousand_separator: '.',
-            decimal_separator: ',',
-            currency_position: 'left',
-            currency_symbol: '$',
-            date_format: 'MM/DD/YYYY',
-            map_provider: 'gmap',
-            map_gmap_key: '',
-        };
-    </script>
+
     <!-- Styles -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -510,38 +496,22 @@
                                                 </span>
                                         </div>
                                     </div>
-                                    <div class="form-content">
-
-                                        <div class="form-group form-date-field form-date-search clearfix "
-                                             data-format="YYYY-MM-DD">
-                                            <div class="date-wrapper clearfix" @click="openStartDate">
-                                                <div class="check-in-wrapper">
-                                                    <label>Start Date</label>
-                                                    <div class="render check-in-render"><input type="date"></div>
-                                                </div>
-                                                <i class="fa fa-angle-down arrow"></i>
-                                            </div>
-                                            <input type="text" class="start_date" ref="start_date"
-                                                   style="height: 1px; visibility: hidden">
-                                        </div>
 
 
-                                        <div v-html="html"></div>
-                                        <div class="submit-group">
-                                            <a href="{{ url('Booking',$package->id)}}"
-                                               class="btn btn-large  btn-primary" name="submit">
-                                                <span v-if="step == 1">BOOK NOW</span>
-                                                <span v-if="step == 2">Book Now</span>
-                                                <i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>
-                                            </a>
-                                            <div class="alert-text mt10" v-show="message.content"
-                                                 v-html="message.content"
-                                                 :class="{'danger':!message.type,'success':message.type}"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+ <div class="form-content">
+
+
+<form method="GET" action="{{  url('Booking/'. $package->id ) }}" >
+
+<input type="date" class="start_date" name="dbook" style="height: 1px;">
+<input  type="hidden" value="">
+<input href="" class="btn btn-large  btn-primary" type="submit" value="BOOK NOW">
+</form>
+
+</div>
+
+
 
 
                     </div>
@@ -598,7 +568,16 @@
 
 
         </div>
-        <div class="bravo_footer">
+
+
+
+
+
+
+
+
+
+            <div class="bravo_footer">
             <div class="mailchimp">
                 <div class="container">
                     <div class="row">
@@ -609,7 +588,7 @@
                                         <div class="media-left hidden-xs col-lg-3" style="
     /* width: 98px; */
 ">
-                                            <img src="images/watercolor-football-clipart-2.png" style="
+                                            <img src="{{ asset('frontend/images/watercolor-football-clipart-2.png') }}" style="
     width: 100%;
 ">
                                         </div>
@@ -622,16 +601,12 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-5 col-lg-6">
-                                    <form action="http://cvc.vacations/newsletter/subscribe"
-                                          class="subcribe-form bravo-subscribe-form bravo-form">
-                                        <input type="hidden" name="_token"
-                                               value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
+                                    <form action="" class="subcribe-form  ">
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control email-input"
-                                                   placeholder="Your Email">
-                                            <button type="submit" class="btn-submit">Subscribe
-                                                <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                                            </button>
+                                            <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
+                                            <button type="" class="btn-submit">Subscribe
+                                        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                                    </button>
                                         </div>
                                         <div class="form-mess"></div>
                                     </form>
@@ -642,6 +617,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="main-footer">
                 <div class="container">
                     <div class="row">
@@ -667,6 +644,7 @@
                                         <div class="sub">
                                             info@to-istanbultours.com
 
+
                                         </div>
                                     </div>
                                     <div class="contact">
@@ -675,16 +653,16 @@
                                         </div>
                                         <div class="sub">
                                             <a href="#">
-                                                <img src="images/facebook.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/facebook.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/whatsapp.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/whatsapp.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/skype.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/skype.png') }}" style="width:10%">
                                             </a>
                                             <a href="#">
-                                                <img src="images/twitter.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/twitter.png') }}" style="width:10%">
                                             </a>
                                         </div>
                                     </div>
@@ -711,7 +689,7 @@
                                             Skype
                                         </div>
                                         <div class="sub">
-
+                                        istanbultours
                                         </div>
                                     </div>
                                     <div class="contact">
@@ -733,12 +711,12 @@
                                 <div class="context">
                                     <ul>
 
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="destinations.html">Destinations</a></li>
-                                        <li><a href="tour.html">Turkey Packages</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="blogo.html">Blog</a></li>
+                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li><a href="{{ url('destinations') }}">Destinations</a></li>
+                                        <li><a href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                                        <li><a href="{{ url('about') }}">About Us</a></li>
+                                        <li><a href="{{ url('contact')  }}">Contact Us</a></li>
+                                        <li><a href="{{ url('blog') }}">Blog</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -746,6 +724,13 @@
                     </div>
                 </div>
             </div>
+            
+        </div>
+
+
+
+
+
             <div class="copy-right">
                 <div class="container context">
                     <div class="row">
@@ -808,22 +793,9 @@
         <script src="{{ asset('frontend/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
         <script src='https://maps.googleapis.com/maps/api/js?key='></script>
-        <script src='libs/infobox.js'></script>
-        <script src='http://cvc.vacations/module/core/js/map-engine.js'></script>
-        <script>
-            jQuery(function ($) {
-            })
-        </script>
-        <script>
-            var bravo_booking_data = {
-                "id": 22,
-                "person_types": [],
-                "max": 0,
-                "open_hours": [],
-                "extra_price": [],
-                "minDate": "01\/16\/2020"
-            }
-        </script>
+        <script src="{{ asset('frontend/llibs/infobox.js') }}"></script>
+        <script src="{{ asset('frontend/module/core/js/map-engine.js') }}"></script>
+       
         <script type="text/javascript"
                 src="{{ asset('frontend/libs/ion_rangeslider/js/ion.rangeSlider.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('frontend/libs/fotorama/fotorama.js') }}"></script>

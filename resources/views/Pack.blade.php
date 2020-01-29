@@ -12,8 +12,8 @@
         gtag('config', 'UA-154435778-1');
     </script>
 
-    <link href="module/tour/css/tour.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://cvc.vacations/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+    <link href="{{ asset('frontend/module/tour/css/tour.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/libs/ion_rangeslider/css/ion.rangeSlider.min.css') }}" />
 
     <style id="custom-css">
         body {
@@ -115,7 +115,7 @@
             background-color: #f18411;
         }
     </style>
-    <link href="http://cvc.vacations/libs/carousel-2/owl.carousel.css" rel="stylesheet">
+    <link href="v{{ asset('frontend/libs/carousel-2/owl.carousel.css') }}" rel="stylesheet">
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -283,7 +283,7 @@
                                 <div class="location">
                                 </div>
                                 <div class="item-title">
-                                    <a href="{{ url('Package/'.$pac['name']) }}">
+                                    <a href="{{ url('Package/'.$pac['slug']) }}">
                                         <h4>
                                         {{ $pac['name'] }}
 
@@ -316,7 +316,6 @@
                     </div>
                             <div class="bravo-pagination">
 
-                                <span class="count-string">Showing 1 - 8 of 8 Tours</span>
                             </div>
                         </div>
                     </div>

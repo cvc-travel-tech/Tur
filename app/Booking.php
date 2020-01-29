@@ -30,7 +30,10 @@ class Booking extends Model
         'total_price',
         'package_id',
         'verification_code',
-        'is_verified'
+        'is_verified',
+        'Transfers',
+        'Accommodation',
+        'Sightseeing'
     );
 
     public function package()

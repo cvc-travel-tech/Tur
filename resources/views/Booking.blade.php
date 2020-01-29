@@ -270,7 +270,6 @@
             z-index: 999;
         }
     </style>
-
     @include('Frontend.nav')
 
     <div style="display: none" class="clone_div">

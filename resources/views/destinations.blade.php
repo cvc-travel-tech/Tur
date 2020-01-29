@@ -209,17 +209,16 @@
                                     </div>
                                 </div>
                             @endif
+                            @foreach($destinations as $key => $value)
 
 
-                    @foreach($destinations->chunk(3) as $chunked)
+                            @if($key!=0)
 
-
-                            @foreach($chunked as $value)
                                 <div class="col-lg-4">
                                     <div class="destination-item ">
                                         <a href="{{ url('destinations_details/'.$value->id) }}">
                                             <div class="image"
-                                                 style="background: url('storage/tmp/uploads/{{ $destinations[0]->tmpImg->file_path }}')">
+                                                 style="background: url('storage/tmp/uploads/{{ $value->tmpImg->file_path }}')">
                                                 <div class="effect"></div>
                                                 <div class="content">
                                                     <h4 class="title">{{ $value->name }}</h4>
@@ -229,7 +228,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            @endforeach
+                                @endif
 
 
                     @endforeach

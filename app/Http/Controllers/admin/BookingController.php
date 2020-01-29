@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Booking;
 use App\Http\Controllers\Controller;
 use App\Package;
-use App\Booking;
+use App\BookingPackageOption;
+use PDF;
+
+
+use App\BookingRoomType;
+//use App\Booking;
 
 class BookingController extends Controller
 {
@@ -23,6 +28,11 @@ class BookingController extends Controller
 
     public function show($id)
     {
+        $roomdata=BookingRoomType::all()->where('booking_id',$id);
+        $data = Booking::find($id);
+        $filename=$data->id;
+        $pdf = PDF::loadView('admin.Booking.pdf',compact('data','roomdata'))->setPaper('a4', 'portrait');
+        return $pdf->stream( $filename,'.pdf');
 
     }
 

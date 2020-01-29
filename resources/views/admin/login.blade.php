@@ -21,13 +21,13 @@
     <!--End of Tawk.to Script-->
 </head>
 
-<body>
+<body style="background-color: #d5d5d5;">
     <div class="cont">
         <div class="demo">
             <div class="login">
                 <!-- <div class="login__check"></div> -->
                 <div class="logo-tech">
-                    <img src="{{ asset('frontend/images/logo-13 (1).png') }}" style="width: 78%;
+                    <img src="{{ asset('frontend/images/Najaf.png') }}" style="width: 78%;
     margin-top: 78px;
     margin-left: 20px;">
                 </div>

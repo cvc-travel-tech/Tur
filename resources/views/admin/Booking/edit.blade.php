@@ -3,6 +3,8 @@
 @section('content')
     {!! Form::open(['route' => ['admin.booking.update',$data->id], 'files' => true , 'class' => 'form-horizontal form-validate-jquery' , 'method' => 'PUT', 'id', 'novalidate'=>'novalidate']) !!}
     <div class="container-detached">
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
         <div class="content-detached">
 
             <!-- Simple panel -->
@@ -38,15 +40,29 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label>First Name</label>
-                                <input class="form-control" name="first_name" value="{{$data->first_name}}">
+                                <label>Accommodation</label>
+                                <textarea class="ckeditor" name="Accommodation" >{{$data->Accommodation}}</textarea>
+
                             </div>
                             <div class="col-md-6">
-                                <label>Last Name</label>
-                                <input class="form-control" name="last_name" value="{{$data->last_name}}">
+                                <label>Transfers</label>
+                                <textarea class="ckeditor" name="Transfers" >{{$data->Transfers}}</textarea>
+
                             </div>
                         </div>
                         <br>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Sightseeing</label>
+                                <textarea class="ckeditor" name="Sightseeing" >{{$data->Sightseeing}}</textarea>
+
+                            </div>
+                            
+                        </div>
+                        <br>
+
+                        
 
                         <div class="row">
                             <div class="col-md-6">
@@ -235,6 +251,19 @@
     <script type="text/javascript" src="{{ asset('admin/js/plugins/pickers/pickadate/picker.date.js')}}"></script>
     <script type="text/javascript" src="{{ asset('admin/js/plugins/pickers/pickadate/picker.time.js')}}"></script>
     <script type="text/javascript" src="{{ asset('admin/js/plugins/pickers/pickadate/legacy.js')}}"></script>
+
+
+    <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
+
     @include('admin.layouts.include.img')
 
 @endsection

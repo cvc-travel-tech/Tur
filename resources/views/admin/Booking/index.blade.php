@@ -20,11 +20,8 @@
                 <tr>
                     <th>id</th>
                     <th>Package</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Nationality</th>
                     <th>Status</th>
                     <th>Created At</th>
                     <th>Action</th>
@@ -36,14 +33,14 @@
                     <tr>
                         <td>{{$value->id}}</td>
                         <td>{{$value->package->name}}</td>
-                        <td>{{$value->first_name ?? ''}}</td>
-                        <td>{{$value->last_name ?? ''}}</td>
                         <td>{{$value->email ?? ''}}</td>
                         <td>{{$value->phone ?? ''}}</td>
-                        <td>{{$value->nationality ?? ''}}</td>
                         <td>{{$value->status == 1 ? 'WAITING' : ($value->status == 2 ? 'CONFIRMED' : 'CANCELED')}}</td>
                         <td>{{$value->created_at ?? ''}}</td>
-                        <td><a href="{{route('admin.booking.edit',$value->id)}}">Show Details</a></td>
+                        <td><a class= "btn btn-success" href="{{route('admin.booking.edit',$value->id)}}">Show Details</a>
+                         <a  class= "btn btn-info" href="{{route('admin.booking.show',$value->id)}}">PDF</a>
+
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

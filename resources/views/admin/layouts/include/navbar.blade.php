@@ -1,7 +1,7 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-default navbar-fixed-top header-highlight">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html"><img src="{{setting('admin', 'logo' , 'img')}}" alt=""></a>
+			<a class="navbar-brand" href="{{ url('/backend') }}"><img src="{{setting('admin', 'logo' , 'img')}}" alt=""></a>
 
 			<ul class="nav navbar-nav pull-right visible-xs-block">
 				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -15,7 +15,7 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Text link</a></li>
+				<li><a href="#"></a></li>
 
 				<li>
 					<a href="#">
@@ -33,11 +33,9 @@
 
 					<ul class="dropdown-menu dropdown-menu-right">
 						<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
-						<li><a href="#"><i class="icon-coins"></i> My balance</a></li>
-						<li><a href="#"><span class="badge badge-warning pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
 						<li class="divider"></li>
-						<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-						<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+						<li><a href="{{ url('backend/setting') }}"><i class="icon-cog5"></i> Web settings</a></li> 
+						<li><a href="{{ url('backend/logout') }}"><i class="icon-switch2"></i> Logout</a></li>
 					</ul>
 				</li>
 			</ul>

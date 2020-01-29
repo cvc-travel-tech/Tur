@@ -137,9 +137,7 @@
                                         Up</a>
                                 </li>
                             </ul>
-                            <form id="logout-form-topbar" action="http://cvc.vacations/logout" method="POST" style="display: none;">
-                                <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
-                            </form>
+
                             </li>
                         </div>
 
@@ -148,6 +146,9 @@
                 </div>
             </div>
         </div>
+
+
+
         <div class="bravo_header">
             <div class="container">
                 <div class="content">
@@ -155,21 +156,20 @@
 
                         <div class="bravo-menu">
                             <ul class="main-menu menu-generated">
-                                <li class=""><a target="" href="index.html">Home</a></li>
-                                <li class="   "><a target="" href="destinations.html">Destinations <i
-                                            class="fa fa-angle-down"></i></a>
-                                    <ul class="children-menu menu-dropdown">
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                    </ul>
+                                <li class=""><a target="" href="{{ url('/') }}">Home</a></li>
+                                <li class="   "><a target="" href="{{ url('destinations') }}">Destinations</a>
+                                   
                                 </li>
-                                <li class="    "><a target="" href="/tour">Turkey Packages</a></li>
-                                <li class="  "><a target="" href="about.html">About Us</a></li>
-                                <li class=""><a target="" href="contact-us.html">Contact Us</a></li>
+                                <li class="    "><a target="" href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                                <li class="  "><a target="" href="{{ url('about') }}">About Us</a></li>
+                                <li class=""><a target="" href="{{ url('contact')  }}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
+
+
+
+
                     <div class="header-right">
                         <button class="bravo-more-menu">
                             <i class="fa fa-bars"></i>
@@ -177,6 +177,9 @@
                     </div>
                 </div>
             </div>
+
+
+
             <div class="bravo-menu-mobile">
                 <div class="user-profile">
                     <div class="b-close"><i class="icofont-scroll-left"></i></div>
@@ -194,27 +197,22 @@
                 </div>
                 <div class="g-menu">
                     <ul class="main-menu menu-generated">
-                        <li class=""><a target="" href="index.html">Home</a></li>
-                        <li class="   "><a target="" href="destinations.html">Destinations <i
+                        <li class=""><a target="" href="{{ url('/') }}">Home</a></li>
+                        <li class="   "><a target="" href="{{ url('destinations') }}">Destinations <i
                                     class="fa fa-angle-down"></i></a>
                             <ul class="main-menu menu-generated">
-                                <li class=""><a target="" href="index.html">Home</a></li>
-                                <li class="   "><a target="" href="destinations.html">Destinations <i
-                                            class="fa fa-angle-down"></i></a>
-                                    <ul class="children-menu menu-dropdown">
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                        <li class=" "><a target="" href="destination-details.html">Istanbul</a></li>
-                                    </ul>
+                                <li class=""><a target="" href="{{ url('/') }}">Home</a></li>
+                                <li class="   "><a target="" href="{{ url('destinations') }}">Destinations 
+
                                 </li>
-                                <li class="    "><a target="" href="tour.html">Turkey Packages</a></li>
-                                <li class="  "><a target="" href="about.html">About Us</a></li>
-                                <li class=""><a target="" href="contact-us.html">Contact Us</a></li>
+                                <li class="    "><a target="" href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                                <li class="  "><a target="" href="{{ url('about') }}">About Us</a></li>
+                                <li class=""><a target="" href="{{ url('contact')  }}">Contact Us</a></li>
                             </ul>
                         </li>
-                        <li class="    "><a target="" href="tour.html">Turkey Packages</a></li>
-                        <li class="  "><a target="" href="about.html">About Us</a></li>
-                        <li class=""><a target="" href="contact-us.html">Contact Us</a></li>
+                        <li class="    "><a target="" href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                        <li class="  "><a target="" href="{{ url('about') }}">About Us</a></li>
+                        <li class=""><a target="" href="{{ url('contact')  }}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -225,7 +223,7 @@
                     <div class="row section">
                         <div class="col-md-5">
                             <div role="form" class="form_wrapper" lang="en-US" dir="ltr">
-                                <form method="post" action="http://cvc.vacations/contact/store" class="bookcore-form">
+                                <form method="post" action=" class="bookcore-form">
                                     <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
                                     <div style="display: none;">
                                         <input type="hidden" name="g-recaptcha-response" value="">
@@ -279,6 +277,9 @@
                 </div>
             </div>
         </div>
+
+
+  
         <div class="bravo_footer">
             <div class="mailchimp">
                 <div class="container">
@@ -288,11 +289,11 @@
                                 <div class="col-xs-12  col-md-12 col-lg-6">
                                     <div class="media ">
                                         <div class="media-left hidden-xs col-lg-3" style="
-                /* width: 98px; */
-            ">
-                                            <img src="images/watercolor-football-clipart-2.png" style="
-                width: 100%;
-            ">
+    /* width: 98px; */
+">
+                                            <img src="{{ asset('frontend/images/watercolor-football-clipart-2.png') }}" style="
+    width: 100%;
+">
                                         </div>
                                         <div class="media-body">
                                             <div class="col-md-12">
@@ -303,13 +304,12 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-5 col-lg-6">
-                                    <form action="http://cvc.vacations/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
-                                        <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
+                                    <form action="" class="subcribe-form  ">
                                         <div class="form-group">
                                             <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
-                                            <button type="submit" class="btn-submit">Subscribe
-                                                <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                                            </button>
+                                            <button type="" class="btn-submit">Subscribe
+                                        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                                    </button>
                                         </div>
                                         <div class="form-mess"></div>
                                     </form>
@@ -320,6 +320,9 @@
                     </div>
                 </div>
             </div>
+
+
+
             <div class="main-footer">
                 <div class="container">
                     <div class="row">
@@ -345,6 +348,7 @@
                                         <div class="sub">
                                             info@to-istanbultours.com
 
+
                                         </div>
                                     </div>
                                     <div class="contact">
@@ -353,16 +357,16 @@
                                         </div>
                                         <div class="sub">
                                             <a href="#">
-                                                <img src="images/facebook.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/facebook.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/whatsapp.png" style="width: 10%;">
+                                                <img src="{{ asset('frontend/images/whatsapp.png') }}" style="width: 10%;">
                                             </a>
                                             <a href="#">
-                                                <img src="images/skype.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/skype.png') }}" style="width:10%">
                                             </a>
                                             <a href="#">
-                                                <img src="images/twitter.png" style="width:10%">
+                                                <img src="{{ asset('frontend/images/twitter.png') }}" style="width:10%">
                                             </a>
                                         </div>
                                     </div>
@@ -389,7 +393,7 @@
                                             Skype
                                         </div>
                                         <div class="sub">
-
+                                        istanbultours
                                         </div>
                                     </div>
                                     <div class="contact">
@@ -411,12 +415,12 @@
                                 <div class="context">
                                     <ul>
 
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="destinations.html">Destinations</a></li>
-                                        <li><a href="tour.html">Turkey Packages</a></li>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li><a href="{{ url('destinations') }}">Destinations</a></li>
+                                        <li><a href="{{ url('Pack')  }}">Turkey Packages</a></li>
+                                        <li><a href="{{ url('about') }}">About Us</a></li>
+                                        <li><a href="{{ url('contact')  }}">Contact Us</a></li>
+                                        <li><a href="{{ url('blog') }}">Blog</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -424,7 +428,8 @@
                     </div>
                 </div>
             </div>
-      
+            
+        </div>
 
 
 

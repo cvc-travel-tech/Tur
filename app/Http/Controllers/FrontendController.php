@@ -15,6 +15,10 @@ use App\PackagePrice;
 use App\Package;
 use App\Blog;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
+
+
 
 class FrontendController extends Controller
 {
@@ -137,13 +141,15 @@ class FrontendController extends Controller
     }
 
 
-    public function Booking($id)
+    public function Booking(Request $request ,$id)
     {
+
+       $x= $request->input('dbook');
         $package = Package::where('id', $id)->with('package_options', 'package_prices')->first();
 
         $package_price = 'object_from_package_price'; //
 
-        return view('Booking', compact('package'));
+        return view('Booking', compact('package','x'));
     }
 
 
@@ -270,4 +276,13 @@ class FrontendController extends Controller
         return view('Pack', compact('Package'));
     }
 
+
+
+    public function spdf(){
+
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
+
+    }
 }

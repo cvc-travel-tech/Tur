@@ -5,6 +5,8 @@
 
             </div>
         </div>
+
+        
         <div class="bravo_footer">
             <div class="mailchimp">
                 <div class="container">
@@ -29,11 +31,10 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-5 col-lg-6">
-                                    <form action="" class="subcribe-form bravo-subscribe-form bravo-form">
-                                        <input type="hidden" name="_token" value="rpIsegRg9AWQquQ8f0S0UzRjdI51mdPWVAwziRyx">
+                                    <form action="" class="subcribe-form  ">
                                         <div class="form-group">
                                             <input type="text" name="email" class="form-control email-input" placeholder="Your Email">
-                                            <button type="submit" class="btn-submit">Subscribe
+                                            <button type="" class="btn-submit">Subscribe
                                         <i class="fa fa-spinner fa-pulse fa-fw"></i>
                                     </button>
                                         </div>
@@ -46,6 +47,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="main-footer">
                 <div class="container">
                     <div class="row">
