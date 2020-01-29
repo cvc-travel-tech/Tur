@@ -47,3 +47,5 @@ Route::get('/hotel_ditails/{id}', 'FrontendController@hotel_ditails');
 
 Route::get('verify','FrontendController@bookingVerify');
 
+Route::get('spdf','FrontendController@spdf');
+

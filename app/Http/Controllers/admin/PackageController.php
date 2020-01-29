@@ -134,38 +134,38 @@ class PackageController extends Controller
             'name' => [
                 'type' => 'text',
                 'tital' => 'Name',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'package Title',
             ],
             'duration' => [
                 'type' => 'text',
                 'tital' => 'Duration',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'Duration (7 days / 6 night)',
             ],
             'overview' => [
                 'type' => 'ckeditor',
                 'tital' => 'Overview',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'overview ',
             ],
             'images' => [
                 'type' => 'multi-image',
                 'tital' => 'images',
                 'width' => '12',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'Selecte Images',
             ],
             'itinerary' => [
                 'type' => 'ckeditor',
                 'tital' => 'itinerary',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'itinerary',
             ],
             'trip_video' => [
                 'type' => 'text',
                 'tital' => 'Trip Video',
-                'placeholder' => 'Pick a size...',
+                'placeholder' => 'Trip Video (youtub <ifram>)',
             ],
             'inclusion' => [
                 'type' => 'ckeditor',
-                'tital' => 'itinerary',
-                'placeholder' => 'Pick a size...',
+                'tital' => 'Package Includes',
+                'placeholder' => 'Package Includes',
             ],
  
             'trip_map' => [
